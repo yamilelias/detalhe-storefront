@@ -41,6 +41,10 @@ if ( storefront_is_woocommerce_activated() ) {
 
 	require 'inc/woocommerce/storefront-woocommerce-template-hooks.php';
 	require 'inc/woocommerce/storefront-woocommerce-template-functions.php';
+
+	// Include customized hooks & functions
+    require 'inc/detalhe/detalhe-hooks.php';
+    require 'inc/detalhe/detalhe-functions.php';
 }
 
 if ( is_admin() ) {
