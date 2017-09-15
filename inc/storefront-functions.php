@@ -81,26 +81,28 @@ function storefront_get_content_background_color() {
 }
 
 /**
- * Apply inline style to the Storefront header.
+ * Apply inline style to the Storefront header. Removed the header image background.
  *
  * @uses  get_header_image()
+ * @see    detalhe_get_header_image()
  * @since  2.0.0
  */
 function storefront_header_styles() {
-	$is_header_image = get_header_image();
-	$header_bg_image = '';
-
-	if ( $is_header_image ) {
-		$header_bg_image = 'url(' . esc_url( $is_header_image ) . ')';
-	}
+//	$is_header_image = get_header_image();
+//	$header_bg_image = '';
+//
+//	if ( $is_header_image ) {
+//		$header_bg_image = 'url(' . esc_url( $is_header_image ) . ')';
+//	}
 
 	$styles = array();
 
-	if ( '' !== $header_bg_image ) {
-		$styles['background-image'] = $header_bg_image;
-	}
+//	if ( '' !== $header_bg_image ) {
+//		$styles['background-image'] = $header_bg_image;
+//	}
 
 	$styles = apply_filters( 'storefront_header_styles', $styles );
+    $styles['padding-top'] = '0'; // Add it for the header banner
 
 	foreach ( $styles as $style => $value ) {
 		echo esc_attr( $style . ': ' . $value . '; ' );

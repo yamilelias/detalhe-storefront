@@ -11,7 +11,8 @@
  * General
  */
 body {
-  font-family: $text-font !important;
+  font-family: $text-font;
+  font-size: large;
 }
 
 /*
@@ -31,7 +32,7 @@ body {
 /*
  * Footer
  */
-footer {
+#landing-menu{
   bottom: 0;
   font-family: $menu-font;
   font-size: xx-large;

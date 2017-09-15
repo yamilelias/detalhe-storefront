@@ -11,7 +11,7 @@
 
 	<?php do_action( 'storefront_before_footer' ); ?>
 
-	<footer>
+	<footer id="landing-menu">
 			<?php
 			/**
 			 * Functions hooked in to detalhe_landing_footer action

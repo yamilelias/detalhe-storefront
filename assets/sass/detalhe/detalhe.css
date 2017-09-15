@@ -32,7 +32,8 @@
  * General
  */
 body {
-  font-family: "BebasNeue-Light" !important; }
+  font-family: "BebasNeue-Light";
+  font-size: large; }
 
 /*
  * Landing
@@ -48,7 +49,7 @@ body {
 /*
  * Footer
  */
-footer {
+#landing-menu {
   bottom: 0;
   font-family: "BebasKai-Regular";
   font-size: xx-large;
@@ -56,14 +57,14 @@ footer {
   position: fixed;
   width: 100%;
   z-index: 6; }
-  footer .wrap {
+  #landing-menu .wrap {
     margin: 10px auto; }
-    footer .wrap .landing-menu {
+    #landing-menu .wrap .landing-menu {
       margin: 0 auto; }
-      footer .wrap .landing-menu li :hover {
+      #landing-menu .wrap .landing-menu li :hover {
         background-color: transparent !important;
         color: black; }
-      footer .wrap .landing-menu li a {
+      #landing-menu .wrap .landing-menu li a {
         color: white; }
 
 /*# sourceMappingURL=detalhe.css.map */

@@ -65,6 +65,32 @@ function get_landing_image_url(){
 }
 
 /**
+ * Apply inline style to the Storefront header.
+ *
+ * @uses  get_header_image()
+ * @since  2.0.0
+ */
+function detalhe_get_header_image() {
+    $header_data = get_custom_header();
+    $header_bg_image = '';
+
+    if (has_header_image()) {
+        $header_bg_image = 'url(' . esc_url( $header_data->url ) . ')';
+    }
+
+    $styles = array();
+
+    if ( '' !== $header_bg_image ) {
+        $styles['background-image'] = $header_bg_image;
+        $styles['height'] = $header_data->height . 'px'; // So it at least shows all the banner
+    }
+
+    foreach ( $styles as $style => $value ) {
+        echo esc_attr( $style . ': ' . $value . '; ' );
+    }
+}
+
+/**
  * Get the styles for the header
  *
  * @since 1.0.0
@@ -95,6 +121,20 @@ if ( ! function_exists( 'detalhe_display_landing_logo' ) ) {
     }
 }
 
+/**
+ * Register custom menus.
+ *
+ * @since 1.0.0
+ */
+function register_footer_menus() {
+    register_nav_menus(
+        array(
+            'landing-footer-menu' => __( 'Landing Footer Menu' ),
+        )
+    );
+}
+add_action( 'init', 'register_footer_menus' );
+
 if ( ! function_exists( 'detalhe_display_footer_menu' ) ) {
     /**
      * Landing page display footer menu
@@ -106,9 +146,8 @@ if ( ! function_exists( 'detalhe_display_footer_menu' ) ) {
             wp_nav_menu(
                 array(
                     'container'         => 'div',
-//                    'theme_location'	=> 'company-footer-menu',
+                    'theme_location'	=> 'landing-footer-menu',
                     'container_class'	=> 'wrap',
-                    'container_id'      => 'landing-footer-menu',
                     'menu_class'        => '',
                     'items_wrap'        => '<ul class="nav navbar-nav landing-menu">%3$s</ul>'
                 )

@@ -26,6 +26,7 @@
 	<?php do_action( 'storefront_before_header' ); ?>
 
 	<header id="masthead" class="site-header" role="banner" style="<?php storefront_header_styles(); ?>">
+        <div id="header-image" style="<?php detalhe_get_header_image(); ?>"></div>
 		<div class="col-full">
 
 			<?php
@@ -42,7 +43,7 @@
 			 * @hooked storefront_header_cart                      - 60
 			 * @hooked storefront_primary_navigation_wrapper_close - 68
 			 */
-			do_action( 'storefront_header' ); ?>
+			do_action( 'storefront_header' );?>
 
 		</div>
 	</header><!-- #masthead -->
