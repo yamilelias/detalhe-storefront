@@ -1,0 +1,37 @@
+/**
+ * _config
+ * User: yamilelias
+ * Date: 15/09/17
+ * Time: 11:30 AM
+ */
+
+@font-face {
+  font-family: 'BebasKai-Regular';
+  src: url('../../fonts/BebasKai-Regular.otf');
+}
+@font-face {
+  font-family: 'BebasNeue-Bold';
+  src: url('../../fonts/BebasNeue-Bold.ttf');
+}
+@font-face {
+  font-family: 'BebasNeue-Light';
+  src: url('../../fonts/BebasNeue-Light.ttf');
+}
+@font-face {
+  font-family: 'BebasNeue-Regular';
+  src: url('../../fonts/BebasNeue-Regular.ttf');
+}
+@font-face {
+  font-family: 'BebasNeue-Book';
+  src: url('../../fonts/BebasNeue-Book.ttf');
+}
+@font-face {
+  font-family: 'BebasNeue-Thin';
+  src: url('../../fonts/BebasNeue-Thin.ttf');
+}
+
+$menu-font : 'BebasKai-Regular';
+$title-font : 'BebasNeue-Book';
+$text-font : 'BebasNeue-Light';
+
+// $primary-color: ...;

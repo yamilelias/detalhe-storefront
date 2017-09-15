@@ -107,16 +107,21 @@ if ( ! function_exists( 'detalhe_display_footer_menu' ) ) {
                 array(
                     'container'         => 'div',
 //                    'theme_location'	=> 'company-footer-menu',
-                    'container_class'	=> 'col-sm-6 text-right footer-content',
-//                    'container_id'      => 'company-footer-menu',
-                    'menu_class'        => 'nav navbar-nav',
-                    'items_wrap'        => '%3$s'
+                    'container_class'	=> 'wrap',
+                    'container_id'      => 'landing-footer-menu',
+                    'menu_class'        => '',
+                    'items_wrap'        => '<ul class="nav navbar-nav landing-menu">%3$s</ul>'
                 )
             );
         } else {
             ?>
-                <li>Store</li>
-                <li>Contact</li>
+            <div class="wrap">
+                <ul class="nav navbar-nav landing-menu">
+                    <li><a href="#">Contacto</a></li>
+                    <li><a href="#">Tienda en Línea</a></li>
+                    <li><a href="#">Social</a></li>
+                </ul>
+            </div>
             <?php
         }
     }

@@ -12,8 +12,6 @@
 	<?php do_action( 'storefront_before_footer' ); ?>
 
 	<footer>
-		<div class="footer-content">
-
 			<?php
 			/**
 			 * Functions hooked in to detalhe_landing_footer action
@@ -22,7 +20,6 @@
 			 */
 			do_action( 'detalhe_landing_footer' ); ?>
 
-		</div><!-- .footer-content -->
 	</footer>
 
 	<?php do_action( 'storefront_after_footer' ); ?>
