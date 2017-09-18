@@ -47,10 +47,16 @@ if ( ! function_exists( 'detalhe_custom_styles_and_scripts' ) ) {
  * Get only the URL from the custom logo and not all the bundle with <a> and <img> elements
  *
  * @since 1.0.0
+ * @param bool $echo Choose if you want to echo the result or return it
  */
-function get_custom_logo_url(){
+function get_custom_logo_url( $echo = true ){
     $custom_logo_id = get_theme_mod( 'custom_logo' );
     $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+
+    if(!$echo){
+        return $image[0];
+    }
+
     echo $image[0];
 }
 
@@ -87,6 +93,69 @@ function detalhe_get_header_image() {
 
     foreach ( $styles as $style => $value ) {
         echo esc_attr( $style . ': ' . $value . '; ' );
+    }
+}
+
+/**
+ * Display the site title or logo
+ *
+ * @since 2.1.0
+ * @param bool $echo Echo the string or return it.
+ * @return string
+ */
+function detalhe_site_title_or_logo($echo = true){
+    $html = '';
+
+    if(has_custom_logo()){
+        $logo_url = get_custom_logo_url(false);
+        $html = '<img id="brand-logo" alt="Brand" src="'. $logo_url .'">';
+    } else {
+        // Deploy the name of the site only if no logo is present
+        $html = get_bloginfo('name');
+    }
+
+    if ( ! $echo ) {
+        return $html;
+    }
+
+    echo $html;
+}
+
+if ( ! function_exists( 'detalhe_primary_navigation' ) ) {
+    /**
+     * Display Primary Navigation
+     *
+     * @since  1.0.0
+     * @return void
+     */
+    function detalhe_primary_navigation() {
+        $logo_item = '<div class="navbar-header">
+                        <button class="menu-toggle" aria-controls="site-navigation" aria-expanded="false"><span>' . esc_attr( apply_filters( 'storefront_menu_toggle_text', __( 'Menu', 'storefront' ) ) ) .'</span></button>' .
+                        '<a class="navbar-brand" href="<?php echo get_site_url(); ?>">'
+                            . detalhe_site_title_or_logo() .
+                        '</a>' .
+                      '</div>';
+        ?>
+        <nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_html_e( 'Primary Navigation', 'storefront' ); ?>">
+            <?php
+            wp_nav_menu(
+                array(
+                    'theme_location'	=> 'primary',
+                    'container_class'	=> 'primary-navigation container-fluid',
+                    'items_wrap'        => $logo_item .'<ul>%3$s</ul>'
+                )
+            );
+
+            wp_nav_menu(
+                array(
+                    'theme_location'	=> 'handheld',
+                    'container_class'	=> 'handheld-navigation',
+                    'items_wrap'        => $logo_item .'<ul>%3$s</ul>'
+                )
+            );
+            ?>
+        </nav><!-- #site-navigation -->
+        <?php
     }
 }
 

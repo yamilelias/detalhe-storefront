@@ -36,6 +36,12 @@ body {
   font-size: large; }
 
 /*
+ * Header
+ */
+#brand-logo {
+  width: 50px; }
+
+/*
  * Landing
  */
 #landing-image {
