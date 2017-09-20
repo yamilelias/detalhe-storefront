@@ -129,10 +129,10 @@ if ( ! function_exists( 'detalhe_primary_navigation' ) ) {
      * @return void
      */
     function detalhe_primary_navigation() {
-        $logo_item = '<div class="navbar-header">
+        $logo_item = '<div class="navbar-header" style="padding-top: .5em;">
                         <button class="menu-toggle" aria-controls="site-navigation" aria-expanded="false"><span>' . esc_attr( apply_filters( 'storefront_menu_toggle_text', __( 'Menu', 'storefront' ) ) ) .'</span></button>' .
-                        '<a class="navbar-brand" href="<?php echo get_site_url(); ?>">'
-                            . detalhe_site_title_or_logo() .
+                        '<a class="navbar-brand" href="'.get_site_url().'">'
+                            . detalhe_site_title_or_logo(false) . // So it won't echo and return the item
                         '</a>' .
                       '</div>';
         ?>
@@ -231,6 +231,54 @@ if ( ! function_exists( 'detalhe_display_footer_menu' ) ) {
                 </ul>
             </div>
             <?php
+        }
+    }
+}
+
+if ( ! function_exists( 'storefront_recent_products' ) ) {
+    /**
+     * Display Recent Products
+     * Hooked into the `homepage` action in the homepage template
+     *
+     * @since  1.0.0
+     * @param array $args the product section args.
+     * @return void
+     */
+    function storefront_recent_products( $args ) {
+
+        if ( storefront_is_woocommerce_activated() ) {
+
+            $args = apply_filters( 'storefront_recent_products_args', array(
+                'limit' 			=> 4,
+                'columns' 			=> 4,
+                'title'				=> __( 'New In', 'storefront' ),
+            ) );
+
+            $shortcode_content = storefront_do_shortcode( 'recent_products', apply_filters( 'storefront_recent_products_shortcode_args', array(
+                'per_page' => intval( $args['limit'] ),
+                'columns'  => intval( $args['columns'] ),
+            ) ) );
+
+            /**
+             * Only display the section if the shortcode returns products
+             */
+            if ( false !== strpos( $shortcode_content, 'product' ) ) {
+
+                echo '<section class="storefront-product-section storefront-recent-products" aria-label="' . esc_attr__( 'Recent Products', 'storefront' ) . '">';
+
+                do_action( 'storefront_homepage_before_recent_products' );
+
+                echo '<h2 class="section-title">' . wp_kses_post( $args['title'] ) . '</h2>';
+
+                do_action( 'storefront_homepage_after_recent_products_title' );
+
+                echo $shortcode_content;
+
+                do_action( 'storefront_homepage_after_recent_products' );
+
+                echo '</section>';
+
+            }
         }
     }
 }
