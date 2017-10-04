@@ -128,6 +128,31 @@ function detalhe_site_title_or_logo($echo = true){
     echo $html;
 }
 
+/**
+ * Display Header Cart. Code got from the woocommerce storefront theme.
+ *
+ * @since  1.0.0
+ * @uses  storefront_is_woocommerce_activated() check if WooCommerce is activated
+ * @return void
+ */
+function display_cart() {
+    if ( storefront_is_woocommerce_activated() ) {
+        ?>
+        <ul id="site-header-cart" class="site-header-cart menu">
+            <li class="nav navbar-nav navbar-right">
+                <a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'storefront' ); ?>">
+                    <span class="count"><?php echo WC()->cart->get_cart_contents_count();?></span>
+                </a>
+            </li>
+            <li class="">
+                <?php the_widget( 'WC_Widget_Cart', 'title=' ); ?>
+            </li>
+        </ul>
+
+        <?php
+    }
+}
+
 if ( ! function_exists( 'detalhe_primary_navigation' ) ) {
     /**
      * Display Primary Navigation
@@ -149,22 +174,13 @@ if ( ! function_exists( 'detalhe_primary_navigation' ) ) {
                 array(
                     'theme_location'	=> 'primary',
                     'container_class'	=> 'primary-navigation container-fluid',
-                    'items_wrap'        => $logo_item .'<ul>%3$s</ul>'
-                )
-            );
-
-            wp_nav_menu(
-                array(
-                    'theme_location'	=> 'handheld',
-                    'container_class'	=> 'handheld-navigation',
-                    'items_wrap'        => $logo_item .'<ul>%3$s</ul>'
+                    'items_wrap'        => $logo_item .'<ul>%3$s</ul>',
                 )
             );
             ?>
-
-
         </nav><!-- #site-navigation -->
         <?php
+        display_cart(); // Display the cart
     }
 }
 

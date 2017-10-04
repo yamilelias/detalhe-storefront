@@ -12,7 +12,7 @@
  */
 body {
   font-family: $text-font;
-  font-size: xx-large;
+  font-size: x-large;
 }
 
 /*
@@ -62,6 +62,17 @@ body {
           color: white;
         }
       }
+    }
+  }
+}
+
+/*
+ * Cart modifications
+ */
+.site-header-cart {
+  .cart-contents {
+    .count {
+      padding-right: 10px;
     }
   }
 }
