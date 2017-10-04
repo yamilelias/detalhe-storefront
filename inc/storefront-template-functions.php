@@ -552,8 +552,8 @@ if ( ! function_exists( 'storefront_product_categories' ) ) {
 		if ( storefront_is_woocommerce_activated() ) {
 
 			$args = apply_filters( 'storefront_product_categories_args', array(
-				'limit' 			=> 3,
-				'columns' 			=> 3,
+				'limit' 			=> 5,
+				'columns' 			=> 5,
 				'child_categories' 	=> 0,
 				'orderby' 			=> 'name',
 				'title'				=> __( 'Shop by Category', 'storefront' ),
@@ -604,8 +604,8 @@ if ( ! function_exists( 'storefront_recent_products' ) ) {
 		if ( storefront_is_woocommerce_activated() ) {
 
 			$args = apply_filters( 'storefront_recent_products_args', array(
-				'limit' 			=> 4,
-				'columns' 			=> 4,
+				'limit' 			=> 5,
+				'columns' 			=> 5,
 				'title'				=> __( 'New In', 'storefront' ),
 			) );
 
@@ -652,8 +652,8 @@ if ( ! function_exists( 'storefront_featured_products' ) ) {
 		if ( storefront_is_woocommerce_activated() ) {
 
 			$args = apply_filters( 'storefront_featured_products_args', array(
-				'limit'   => 4,
-				'columns' => 4,
+				'limit'   => 5,
+				'columns' => 5,
 				'orderby' => 'date',
 				'order'   => 'desc',
 				'title'   => __( 'We Recommend', 'storefront' ),
@@ -704,8 +704,8 @@ if ( ! function_exists( 'storefront_popular_products' ) ) {
 		if ( storefront_is_woocommerce_activated() ) {
 
 			$args = apply_filters( 'storefront_popular_products_args', array(
-				'limit'   => 4,
-				'columns' => 4,
+				'limit'   => 5,
+				'columns' => 5,
 				'title'   => __( 'Fan Favorites', 'storefront' ),
 			) );
 
@@ -752,8 +752,8 @@ if ( ! function_exists( 'storefront_on_sale_products' ) ) {
 		if ( storefront_is_woocommerce_activated() ) {
 
 			$args = apply_filters( 'storefront_on_sale_products_args', array(
-				'limit'   => 4,
-				'columns' => 4,
+				'limit'   => 5,
+				'columns' => 5,
 				'title'   => __( 'On Sale', 'storefront' ),
 			) );
 
@@ -799,8 +799,8 @@ if ( ! function_exists( 'storefront_best_selling_products' ) ) {
 		if ( storefront_is_woocommerce_activated() ) {
 
 			$args = apply_filters( 'storefront_best_selling_products_args', array(
-				'limit'   => 4,
-				'columns' => 4,
+				'limit'   => 5,
+				'columns' => 5,
 				'title'	  => esc_attr__( 'Best Sellers', 'storefront' ),
 			) );
 

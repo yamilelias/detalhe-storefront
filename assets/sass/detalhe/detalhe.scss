@@ -12,14 +12,14 @@
  */
 body {
   font-family: $text-font;
-  font-size: large;
+  font-size: xx-large;
 }
 
 /*
  * Header
  */
 #brand-logo {
-  width: 50px;
+  width: 80px;
 }
 
 /*
@@ -36,13 +36,9 @@ body {
   }
 }
 
-/*
- * Footer
- */
 #landing-menu{
-  bottom: 0;
   font-family: $menu-font;
-  font-size: xx-large;
+  font-size: x-large;
   height: 70px;
   position: fixed;
   width: 100%;
@@ -52,9 +48,11 @@ body {
     margin: 10px auto;
 
     .landing-menu {
-      margin: 0 auto;
+      margin: .7em auto;
 
       li {
+        padding: 1em 0;
+
         & :hover {
           background-color: transparent !important;
           color: black;

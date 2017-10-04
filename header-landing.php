@@ -30,5 +30,5 @@
      *
      * @hooked detalhe_show_title_or_logo - 10
      */
-    //do_action( 'detalhe_landing_header' );
+    do_action( 'detalhe_landing_header' );
 

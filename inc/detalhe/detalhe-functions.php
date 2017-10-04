@@ -6,6 +6,13 @@
  * Time: 11:03 AM
  */
 
+
+// Change number or products per row to 5
+add_filter('loop_shop_columns', 'loop_columns', 999);
+function loop_columns() {
+  return 5; // 5 products per row
+}
+
 if ( ! function_exists( 'detalhe_custom_styles_and_scripts' ) ) {
     /**
      * Function to generate the styles and scripts needed in head
@@ -154,6 +161,53 @@ if ( ! function_exists( 'detalhe_primary_navigation' ) ) {
                 )
             );
             ?>
+
+
+        </nav><!-- #site-navigation -->
+        <?php
+    }
+}
+
+if ( ! function_exists( 'detalhe_landing_navigation' ) ) {
+    /**
+     * Display Primary Navigation
+     *
+     * @since  1.0.0
+     * @return void
+     */
+    function detalhe_landing_navigation() {
+        $logo_item = '<div class="navbar-header" style="padding-top: .5em;">
+                        <button class="menu-toggle" aria-controls="site-navigation" aria-expanded="false"><span>' . esc_attr( apply_filters( 'storefront_menu_toggle_text', __( 'Menu', 'storefront' ) ) ) .'</span></button>' .
+            '<a class="navbar-brand" href="'.get_site_url().'">'
+            . detalhe_site_title_or_logo(false) . // So it won't echo and return the item
+            '</a>' .
+            '</div>';
+        ?>
+        <nav id="landing-menu" class="" role="navigation" aria-label="<?php esc_html_e( 'Primary Navigation', 'storefront' ); ?>">
+            <?php
+            if(has_nav_menu( 'landing-menu' )){
+                wp_nav_menu(
+                    array(
+                        'container'         => 'div',
+                        'theme_location'	=> 'landing-menu',
+                        'container_class'	=> 'wrap',
+                        'menu_class'        => '',
+                        'items_wrap'        => $logo_item . '<ul class="nav navbar-nav landing-menu">%3$s</ul>'
+                    )
+                );
+            } else {
+                echo $logo_item; // Set first the logo, then the default navbar
+                ?>
+                <div class="wrap">
+                    <ul class="nav navbar-nav landing-menu">
+                        <li><a href="#">Contacto</a></li>
+                        <li><a href="#">Tienda en Línea</a></li>
+                        <li><a href="#">Social</a></li>
+                    </ul>
+                </div>
+                <?php
+            }
+            ?>
         </nav><!-- #site-navigation -->
         <?php
     }
@@ -169,117 +223,16 @@ function detalhe_get_landing_header_styles() {
           ''; // Get the padding for the image in the background from the image set
 }
 
-if ( ! function_exists( 'detalhe_display_landing_logo' ) ) {
-    /**
-     * Landing page display header logo
-     *
-     * @since  1.0.0
-     */
-    function detalhe_display_landing_logo() {
-        ?>
-        <nav class="navbar">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <div id="header-background" style="<?php detalhe_get_landing_header_styles() ?>">
-                        <?php the_custom_logo(); ?>
-                    </div>
-                </div>
-            </div>
-        </nav>
-        <?php
-    }
-}
-
 /**
  * Register custom menus.
  *
  * @since 1.0.0
  */
-function register_footer_menus() {
+function register_custom_menus() {
     register_nav_menus(
         array(
             'landing-footer-menu' => __( 'Landing Footer Menu' ),
         )
     );
 }
-add_action( 'init', 'register_footer_menus' );
-
-if ( ! function_exists( 'detalhe_display_footer_menu' ) ) {
-    /**
-     * Landing page display footer menu
-     *
-     * @since  1.0.0
-     */
-    function detalhe_display_footer_menu() {
-        if(has_nav_menu( 'landing-footer-menu' )){
-            wp_nav_menu(
-                array(
-                    'container'         => 'div',
-                    'theme_location'	=> 'landing-footer-menu',
-                    'container_class'	=> 'wrap',
-                    'menu_class'        => '',
-                    'items_wrap'        => '<ul class="nav navbar-nav landing-menu">%3$s</ul>'
-                )
-            );
-        } else {
-            ?>
-            <div class="wrap">
-                <ul class="nav navbar-nav landing-menu">
-                    <li><a href="#">Contacto</a></li>
-                    <li><a href="#">Tienda en Línea</a></li>
-                    <li><a href="#">Social</a></li>
-                </ul>
-            </div>
-            <?php
-        }
-    }
-}
-
-if ( ! function_exists( 'storefront_recent_products' ) ) {
-    /**
-     * Display Recent Products
-     * Hooked into the `homepage` action in the homepage template
-     *
-     * @since  1.0.0
-     * @param array $args the product section args.
-     * @return void
-     */
-    function storefront_recent_products( $args ) {
-
-        if ( storefront_is_woocommerce_activated() ) {
-
-            $args = apply_filters( 'storefront_recent_products_args', array(
-                'limit' 			=> 4,
-                'columns' 			=> 4,
-                'title'				=> __( 'New In', 'storefront' ),
-            ) );
-
-            $shortcode_content = storefront_do_shortcode( 'recent_products', apply_filters( 'storefront_recent_products_shortcode_args', array(
-                'per_page' => intval( $args['limit'] ),
-                'columns'  => intval( $args['columns'] ),
-            ) ) );
-
-            /**
-             * Only display the section if the shortcode returns products
-             */
-            if ( false !== strpos( $shortcode_content, 'product' ) ) {
-
-                echo '<section class="storefront-product-section storefront-recent-products" aria-label="' . esc_attr__( 'Recent Products', 'storefront' ) . '">';
-
-                do_action( 'storefront_homepage_before_recent_products' );
-
-                echo '<h2 class="section-title">' . wp_kses_post( $args['title'] ) . '</h2>';
-
-                do_action( 'storefront_homepage_after_recent_products_title' );
-
-                echo $shortcode_content;
-
-                do_action( 'storefront_homepage_after_recent_products' );
-
-                echo '</section>';
-
-            }
-        }
-    }
-}
-
+add_action( 'init', 'register_custom_menus' );

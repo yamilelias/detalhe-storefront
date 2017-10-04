@@ -11,7 +11,7 @@
  *
  * @see  detalhe_display_landing_logo()
  */
-add_action('detalhe_landing_header', 'detalhe_display_landing_logo', 10);
+add_action('detalhe_landing_header', 'detalhe_landing_navigation', 10);
 
 /**
  * Header
