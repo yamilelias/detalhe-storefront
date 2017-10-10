@@ -42,6 +42,13 @@ if ( ! function_exists( 'detalhe_custom_styles_and_scripts' ) ) {
 
             wp_enqueue_style( 'bootstrap-css', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css');
         }
+        if(!wp_style_is('ionicons')){
+            wp_enqueue_style( 'ionicons', get_template_directory_uri() . '/assets/css/ionicons.min.css');
+        } else {
+            wp_dequeue_style('ionicons');
+
+            wp_enqueue_style( 'ionicons', get_template_directory_uri() . '/assets/css/ionicons.min.css');
+        }
 
         // Check for custom styles and scripts
         if(!wp_style_is('detalhe-css')){
