@@ -80,7 +80,7 @@ if ( ! function_exists( 'storefront_footer_widgets' ) ) {
 	 */
 	function storefront_footer_widgets() {
 		$rows    = intval( apply_filters( 'storefront_footer_widget_rows', 1 ) );
-		$regions = intval( apply_filters( 'storefront_footer_widget_columns', 4 ) );
+		$regions = intval( apply_filters( 'storefront_footer_widget_columns', 2 ) );
 
 		for ( $row = 1; $row <= $rows; $row++ ) :
 

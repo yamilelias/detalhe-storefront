@@ -42,8 +42,36 @@ body {
   width: 80px; }
 
 /*
+ * Footer
+ */
+footer {
+  font-size: large; }
+  footer .footer-widgets {
+    padding-top: 0 !important; }
+  footer .footer-form {
+    float: right; }
+    footer .footer-form .input-name {
+      width: 49%; }
+    footer .footer-form .input-email {
+      float: right;
+      width: 49%; }
+    footer .footer-form .input-message {
+      color: black;
+      margin-top: 3px; }
+    footer .footer-form button {
+      color: black;
+      float: right;
+      margin-top: 10px; }
+
+/*
  * Landing
  */
+@media screen and (max-width: 1024px) {
+  /* Specific to this particular image */
+  img.bg {
+    left: 50%;
+    margin-left: -512px;
+    /* 50% */ } }
 #landing-image {
   position: relative; }
   #landing-image .inner-image {

@@ -23,8 +23,52 @@ body {
 }
 
 /*
+ * Footer
+ */
+footer {
+  font-size: large;
+
+  .footer-widgets{
+    padding-top: 0 !important;
+  }
+
+  .footer-form {
+    float: right;
+
+    .input-name {
+      width: 49%;
+    }
+
+    .input-email {
+      float: right;
+      width: 49%;
+    }
+
+    .input-message {
+      color: black;
+      margin-top: 3px;
+    }
+
+    button {
+      color: black;
+      float: right;
+      margin-top: 10px;
+    }
+  }
+}
+
+
+/*
  * Landing
  */
+
+@media screen and (max-width: 1024px) { /* Specific to this particular image */
+  img.bg {
+    left: 50%;
+    margin-left: -512px;   /* 50% */
+  }
+}
+
 #landing-image {
   position: relative;
 
