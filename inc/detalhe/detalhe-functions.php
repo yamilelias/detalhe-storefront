@@ -168,8 +168,8 @@ if ( ! function_exists( 'detalhe_primary_navigation' ) ) {
      * @return void
      */
     function detalhe_primary_navigation() {
-        $logo_item = '<div class="navbar-header" style="padding-top: .5em;">
-                        <button class="menu-toggle" aria-controls="site-navigation" aria-expanded="false"><span>' . esc_attr( apply_filters( 'storefront_menu_toggle_text', __( 'Menu', 'storefront' ) ) ) .'</span></button>' .
+        $logo_item = '<div class="navbar-header">' .
+//                        '<button class="menu-toggle" aria-controls="site-navigation" aria-expanded="false"><span>' . esc_attr( apply_filters( 'storefront_menu_toggle_text', __( 'Menu', 'storefront' ) ) ) .'</span></button>' .
                         '<a class="navbar-brand" href="'.get_site_url().'">'
                             . detalhe_site_title_or_logo(false) . // So it won't echo and return the item
                         '</a>' .
@@ -181,7 +181,7 @@ if ( ! function_exists( 'detalhe_primary_navigation' ) ) {
                 array(
                     'theme_location'	=> 'primary',
                     'container_class'	=> 'primary-navigation container-fluid',
-                    'items_wrap'        => $logo_item .'<ul>%3$s</ul>',
+                    'items_wrap'        => $logo_item .'<ul class="main-menu">%3$s</ul>',
                 )
             );
             ?>
@@ -199,8 +199,8 @@ if ( ! function_exists( 'detalhe_landing_navigation' ) ) {
      * @return void
      */
     function detalhe_landing_navigation() {
-        $logo_item = '<div class="navbar-header" style="padding-top: .5em;">
-                        <button class="menu-toggle" aria-controls="site-navigation" aria-expanded="false"><span>' . esc_attr( apply_filters( 'storefront_menu_toggle_text', __( 'Menu', 'storefront' ) ) ) .'</span></button>' .
+        $logo_item = '<div class="navbar-header">' .
+//                        '<button class="menu-toggle" aria-controls="site-navigation" aria-expanded="false"><span>' . esc_attr( apply_filters( 'storefront_menu_toggle_text', __( 'Menu', 'storefront' ) ) ) .'</span></button>' .
             '<a class="navbar-brand" href="'.get_site_url().'">'
             . detalhe_site_title_or_logo(false) . // So it won't echo and return the item
             '</a>' .
@@ -215,14 +215,14 @@ if ( ! function_exists( 'detalhe_landing_navigation' ) ) {
                         'theme_location'	=> 'landing-menu',
                         'container_class'	=> 'wrap',
                         'menu_class'        => '',
-                        'items_wrap'        => $logo_item . '<ul class="nav navbar-nav landing-menu">%3$s</ul>'
+                        'items_wrap'        => $logo_item . '<ul class="landing-menu">%3$s</ul>'
                     )
                 );
             } else {
                 echo $logo_item; // Set first the logo, then the default navbar
                 ?>
                 <div class="wrap">
-                    <ul class="nav navbar-nav landing-menu">
+                    <ul class="landing-menu">
                         <li><a href="#">Contacto</a></li>
                         <li><a href="#">Tienda en Línea</a></li>
                         <li><a href="#">Social</a></li>
@@ -231,7 +231,7 @@ if ( ! function_exists( 'detalhe_landing_navigation' ) ) {
                 <?php
             }
             ?>
-        </nav><!-- #site-navigation -->
+        </nav><!-- #landing-menu -->
         <?php
     }
 }
@@ -254,7 +254,7 @@ function detalhe_get_landing_header_styles() {
 function register_custom_menus() {
     register_nav_menus(
         array(
-            'landing-footer-menu' => __( 'Landing Footer Menu' ),
+            'landing-footer-menu' => __( 'Landing Menu' ),
         )
     );
 }

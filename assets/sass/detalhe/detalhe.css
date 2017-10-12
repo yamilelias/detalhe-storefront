@@ -39,8 +39,22 @@ body {
  * Header
  */
 #brand-logo {
-  width: 80px; }
+  width: 80px;
+  padding-top: .5em; }
 
+.main-navigation .navbar-header {
+  float: left;
+  padding-right: 1em; }
+.main-navigation .main-menu {
+  padding-top: 1em; }
+  .main-navigation .main-menu li {
+    margin-left: 1em; }
+
+@media screen and (min-width: 768px) {
+  .main-navigation {
+    margin-right: 0 !important; }
+    .main-navigation a {
+      padding: 0; } }
 /*
  * Footer
  */
@@ -48,20 +62,23 @@ footer {
   font-size: large; }
   footer .footer-widgets {
     padding-top: 0 !important; }
-  footer .footer-form {
-    float: right; }
-    footer .footer-form .input-name {
-      width: 49%; }
-    footer .footer-form .input-email {
-      float: right;
-      width: 49%; }
-    footer .footer-form .input-message {
-      color: black;
-      margin-top: 3px; }
-    footer .footer-form button {
-      color: black;
-      float: right;
-      margin-top: 10px; }
+    footer .footer-widgets .social-media-container i {
+      padding-left: .5em;
+      font-size: 40px; }
+    footer .footer-widgets .footer-form {
+      float: right; }
+      footer .footer-widgets .footer-form .input-name {
+        width: 49%; }
+      footer .footer-widgets .footer-form .input-email {
+        float: right;
+        width: 49%; }
+      footer .footer-widgets .footer-form .input-message {
+        color: black;
+        margin-top: 3px; }
+      footer .footer-widgets .footer-form button {
+        color: black;
+        float: right;
+        margin-top: 10px; }
 
 /*
  * Landing
@@ -104,5 +121,13 @@ footer {
  */
 .site-header-cart .cart-contents .count {
   padding-right: 10px; }
+
+@media screen and (min-width: 768px) {
+  .woocommerce-active .site-header .site-header-cart {
+    float: right;
+    margin-right: 0;
+    margin-bottom: 0; }
+  .woocommerce-active .site-header .cart-contents {
+    padding: 1.618em 2em; } }
 
 /*# sourceMappingURL=detalhe.css.map */
