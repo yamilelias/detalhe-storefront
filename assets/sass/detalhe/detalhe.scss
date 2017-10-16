@@ -57,10 +57,21 @@ footer {
   .footer-widgets{
     padding-top: 0 !important;
 
-    .social-media-container {
+    .social-media-widget {
       i {
         padding-left: .5em;
         font-size: 40px;
+      }
+    }
+
+    .information-widget {
+      .terms {
+        font-size: x-large;
+        margin-bottom: 0px;
+      }
+
+      .copyright {
+        font-size: medium;
       }
     }
 

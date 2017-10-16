@@ -62,9 +62,14 @@ footer {
   font-size: large; }
   footer .footer-widgets {
     padding-top: 0 !important; }
-    footer .footer-widgets .social-media-container i {
+    footer .footer-widgets .social-media-widget i {
       padding-left: .5em;
       font-size: 40px; }
+    footer .footer-widgets .information-widget .terms {
+      font-size: x-large;
+      margin-bottom: 0px; }
+    footer .footer-widgets .information-widget .copyright {
+      font-size: medium; }
     footer .footer-widgets .footer-form {
       float: right; }
       footer .footer-widgets .footer-form .input-name {
