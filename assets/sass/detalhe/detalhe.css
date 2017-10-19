@@ -35,6 +35,15 @@ body {
   font-family: "BebasNeue-Light";
   font-size: x-large; }
 
+.content-area {
+  margin-bottom: 0; }
+  .content-area .site-main {
+    margin-bottom: 0; }
+
+.storefront-brands-section .no-padding-sides {
+  padding-left: 0;
+  padding-right: 0; }
+
 /*
  * Header
  */
@@ -59,7 +68,8 @@ body {
  * Footer
  */
 footer {
-  font-size: large; }
+  font-size: large;
+  padding-bottom: 0px !important; }
   footer .footer-widgets {
     padding-top: 0 !important; }
     footer .footer-widgets .social-media-widget i {
