@@ -88,6 +88,15 @@ footer {
 /*
  * Landing
  */
+.carousel-item {
+  height: 100vh;
+  min-height: 300px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+
 @media screen and (max-width: 1024px) {
   /* Specific to this particular image */
   img.bg {
@@ -109,16 +118,16 @@ footer {
   position: fixed;
   width: 100%;
   z-index: 6; }
-  #landing-menu .wrap {
+  #landing-menu .container .wrap {
     margin: 10px auto; }
-    #landing-menu .wrap .landing-menu {
+    #landing-menu .container .wrap .landing-menu {
       margin: .7em auto; }
-      #landing-menu .wrap .landing-menu li {
+      #landing-menu .container .wrap .landing-menu li {
         padding: 1em 0; }
-        #landing-menu .wrap .landing-menu li :hover {
+        #landing-menu .container .wrap .landing-menu li :hover {
           background-color: transparent !important;
           color: black; }
-        #landing-menu .wrap .landing-menu li a {
+        #landing-menu .container .wrap .landing-menu li a {
           color: white; }
 
 /*

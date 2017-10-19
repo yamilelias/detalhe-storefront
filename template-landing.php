@@ -10,12 +10,19 @@
 // Get the special header for landing
 get_header('landing');
 ?>
-<div id="landing-image">
-    <div>
-        <img src="<?php get_landing_image_url() ?>" alt="" />
-    </div>
-</div>
+<!--<div id="landing-image">-->
+<!--    <div>-->
+<!--        <img src="--><?php //get_landing_image_url() ?><!--" alt="" />-->
+<!--    </div>-->
+<!--</div>-->
+
+    <?php
+    /**
+     * Functions hooked into detalhe_landing_page action
+     *
+     * @hooked detalhe_landing_carousel - 10
+     */
+    do_action( 'detalhe_landing_page' );
 
 
-<?php
-// There is no footer in the landing page
+get_footer('landing');

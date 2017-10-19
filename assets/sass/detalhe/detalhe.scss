@@ -106,6 +106,16 @@ footer {
  * Landing
  */
 
+.carousel-item {
+  height: 100vh;
+  min-height: 300px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 @media screen and (max-width: 1024px) { /* Specific to this particular image */
   img.bg {
     left: 50%;
@@ -132,22 +142,24 @@ footer {
   width: 100%;
   z-index: 6;
 
-  .wrap {
-    margin: 10px auto;
+  .container {
+    .wrap {
+      margin: 10px auto;
 
-    .landing-menu {
-      margin: .7em auto;
+      .landing-menu {
+        margin: .7em auto;
 
-      li {
-        padding: 1em 0;
+        li {
+          padding: 1em 0;
 
-        & :hover {
-          background-color: transparent !important;
-          color: black;
-        }
+          & :hover {
+            background-color: transparent !important;
+            color: black;
+          }
 
-        a {
-          color: white;
+          a {
+            color: white;
+          }
         }
       }
     }

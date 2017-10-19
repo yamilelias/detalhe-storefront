@@ -10,8 +10,15 @@
  * Landing Header
  *
  * @see  detalhe_display_landing_logo()
+ * @see  detalhe_landing_navigation()
+ * @see  detalhe_landing_carousel()
  */
 add_action('detalhe_landing_header', 'detalhe_landing_navigation', 10);
+
+/**
+ * Landing page
+ */
+add_action('detalhe_landing_page', 'detalhe_landing_carousel', 10);
 
 /**
  * Header
