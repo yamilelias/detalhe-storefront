@@ -7,7 +7,7 @@
  */
 ( function() {
 	// Add class to footer search when clicked
-	jQuery( window ).load( function() {
+	jQuery( window ).on('load', function() {
 		jQuery( '.storefront-handheld-footer-bar .search > a' ).click( function(e) {
 			jQuery( this ).parent().toggleClass( 'active' );
 			e.preventDefault();
@@ -89,7 +89,7 @@
 		}
 
 	// Add focus to cart dropdown
-	jQuery( window ).load( function() {
+	jQuery( window ).on('load', function() {
 		jQuery( '.site-header-cart' ).find( 'a' ).on( 'focus.storefront blur.storefront', function() {
 			jQuery( this ).parents().toggleClass( 'focus' );
 		});
