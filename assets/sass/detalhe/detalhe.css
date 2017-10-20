@@ -43,6 +43,18 @@ body {
 .storefront-brands-section .no-padding-sides {
   padding-left: 0;
   padding-right: 0; }
+  .storefront-brands-section .no-padding-sides .item {
+    position: relative;
+    overflow: hidden; }
+    .storefront-brands-section .no-padding-sides .item img {
+      max-width: 100%;
+      -moz-transition: all 0.3s;
+      -webkit-transition: all 0.3s;
+      transition: all 0.3s; }
+    .storefront-brands-section .no-padding-sides .item :hover img {
+      -moz-transform: scale(1.1);
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1); }
 
 /*
  * Header
