@@ -91,18 +91,18 @@ function get_custom_logo_url( $echo = true ){
  * @since  1.0.0
  */
 function detalhe_get_header_image() {
-
     // If the plugin is active, then follow the business logic and check if there is a brand present
     if(is_detalhe_core_actived()) {
+        $brand = \Com\Detalhe\Core\Controllers\Brands::get_current_brand();
         $have_brand = \Com\Detalhe\Core\Controllers\Brands::have_brand();
 
         // If there is a brand present, then display the brand banner.
         if($have_brand) {
-            $brand = \Com\Detalhe\Core\Controllers\Brands::get_current_brand();
 
             fetch_header_image($brand->header_banner);
         }
     } else {
+
         // Fetch the normal header if the plugin is deactivated.
         fetch_header_image();
     }
@@ -113,9 +113,10 @@ function detalhe_get_header_image() {
  *
  * @uses  get_header_image()
  * @since 1.0.0
- * @param array $image
+ * @param object|string $image
  */
-function fetch_header_image($image = array()) {
+function fetch_header_image($image = '') {
+
     $header_data = isset($image) ? $image : get_custom_header(); // Get the header if an image is not provided
     $header_bg_image = '';
 
