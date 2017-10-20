@@ -84,14 +84,23 @@ footer {
   padding-bottom: 0px !important; }
   footer .footer-widgets {
     padding-top: 0 !important; }
+    footer .footer-widgets .widget {
+      margin: 0 0 .706325903em !important; }
     footer .footer-widgets .social-media-widget i {
       padding-left: .5em;
       font-size: 40px; }
-    footer .footer-widgets .information-widget .terms {
-      font-size: x-large;
-      margin-bottom: 0px; }
-    footer .footer-widgets .information-widget .copyright {
-      font-size: medium; }
+    footer .footer-widgets .information-widget {
+      margin-top: 3em; }
+      footer .footer-widgets .information-widget .terms {
+        font-size: x-large;
+        margin-bottom: 0px; }
+      footer .footer-widgets .information-widget .copyright {
+        font-size: medium; }
+    footer .footer-widgets .operators-widget .operator {
+      display: flex; }
+      footer .footer-widgets .operators-widget .operator img {
+        height: 25px;
+        margin-left: .3em; }
     footer .footer-widgets .footer-form {
       float: right; }
       footer .footer-widgets .footer-form .input-name {

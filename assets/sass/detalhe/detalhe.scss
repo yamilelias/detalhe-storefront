@@ -91,8 +91,12 @@ footer {
   font-size: large;
   padding-bottom: 0px !important;
 
-  .footer-widgets{
+  .footer-widgets {
     padding-top: 0 !important;
+
+    .widget {
+      margin: 0 0 .706325903em !important;
+    }
 
     .social-media-widget {
       i {
@@ -102,6 +106,8 @@ footer {
     }
 
     .information-widget {
+      margin-top: 3em;
+
       .terms {
         font-size: x-large;
         margin-bottom: 0px;
@@ -109,6 +115,17 @@ footer {
 
       .copyright {
         font-size: medium;
+      }
+    }
+
+    .operators-widget {
+      .operator {
+        display: flex;
+
+        img {
+          height: 25px;
+          margin-left: .3em;
+        }
       }
     }
 
