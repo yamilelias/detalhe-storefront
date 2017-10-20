@@ -75,16 +75,6 @@ function get_custom_logo_url( $echo = true ){
 }
 
 /**
- * Returns the url to the landing image url (default or the one set into the start page)
- *
- * @since 1.0.0
- * @return string url to the image, default or set in the page
- */
-function get_landing_image_url(){
-    echo has_post_thumbnail() ? get_the_post_thumbnail() : get_template_directory_uri() . '/assets/images/detalhe/welcome.jpg';
-}
-
-/**
  * Apply inline style to the Storefront header.
  *
  * @uses  get_header_image()
@@ -170,7 +160,7 @@ if ( ! function_exists( 'detalhe_primary_navigation' ) ) {
     function detalhe_primary_navigation() {
         $logo_item = '<div class="navbar-header">' .
 //                        '<button class="menu-toggle" aria-controls="site-navigation" aria-expanded="false"><span>' . esc_attr( apply_filters( 'storefront_menu_toggle_text', __( 'Menu', 'storefront' ) ) ) .'</span></button>' .
-                        '<a class="navbar-brand" href="'.get_site_url().'">'
+                        '<a class="navbar-brand" href="'.get_site_url().'/shop">'
                             . detalhe_site_title_or_logo(false) . // So it won't echo and return the item
                         '</a>' .
                       '</div>';
@@ -206,9 +196,9 @@ if ( ! function_exists( 'detalhe_landing_navigation' ) ) {
                 <div class="navbar-header">
                     <a class="navbar-brand" href="#"><?php detalhe_site_title_or_logo() ?></a>
                 </div>
-                <!--            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">-->
-                <!--                <span class="navbar-toggler-icon"></span>-->
-                <!--            </button>-->
+<!--                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--                    <span class="navbar-toggler-icon"></span>-->
+<!--                </button>-->
                 <?php
             if(has_nav_menu( 'landing-menu' )){
                 wp_nav_menu(
@@ -291,16 +281,6 @@ if ( ! function_exists( 'detalhe_landing_carousel' ) ) {
 
         <?php
     }
-}
-
-/**
- * Get the styles for the header
- *
- * @since 1.0.0
- */
-function detalhe_get_landing_header_styles() {
-    echo 'background: url('. get_landing_image_url() .') no-repeat center;' .
-          ''; // Get the padding for the image in the background from the image set
 }
 
 /**

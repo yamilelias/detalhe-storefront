@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying the landing page. Please not that is not more than a header and a footer, without content.
+ * The template for displaying the landing page. It will show a full page carousel only with a menu in the upper part.
  *
  * Template Name: Landing Page
  *
@@ -9,14 +9,7 @@
 
 // Get the special header for landing
 get_header('landing');
-?>
-<!--<div id="landing-image">-->
-<!--    <div>-->
-<!--        <img src="--><?php //get_landing_image_url() ?><!--" alt="" />-->
-<!--    </div>-->
-<!--</div>-->
 
-    <?php
     /**
      * Functions hooked into detalhe_landing_page action
      *
