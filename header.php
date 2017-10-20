@@ -52,11 +52,3 @@
 
 	<div id="content" class="site-content" tabindex="-1">
 		<div class="col-full">
-
-		<?php
-		/**
-		 * Functions hooked in to storefront_content_top
-		 *
-		 * @hooked woocommerce_breadcrumb - 10
-		 */
-//		do_action( 'storefront_content_top' );

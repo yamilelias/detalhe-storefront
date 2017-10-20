@@ -6,6 +6,15 @@
  * Time: 11:03 AM
  */
 
+/**
+ * Validate if the core plugin is active in order to use the functions from it.
+ *
+ * @since 1.0.0
+ * @return bool
+ */
+function is_detalhe_core_actived(){
+    return class_exists( 'Detalhe_Core' ) ? true : false;
+}
 
 // Change number or products per row to 5
 add_filter('loop_shop_columns', 'loop_columns', 999);
@@ -75,13 +84,39 @@ function get_custom_logo_url( $echo = true ){
 }
 
 /**
- * Apply inline style to the Storefront header.
+ * It will return the header image depending if the detalhe plugin is active and if there is a brand present. If
+ * none of them are true, then return the normal header.
  *
- * @uses  get_header_image()
- * @since  2.0.0
+ * @uses  fetch_header_image()
+ * @since  1.0.0
  */
 function detalhe_get_header_image() {
-    $header_data = get_custom_header();
+
+    // If the plugin is active, then follow the business logic and check if there is a brand present
+    if(is_detalhe_core_actived()) {
+        $have_brand = \Com\Detalhe\Core\Controllers\Brands::have_brand();
+
+        // If there is a brand present, then display the brand banner.
+        if($have_brand) {
+            $brand = \Com\Detalhe\Core\Controllers\Brands::get_current_brand();
+
+            fetch_header_image($brand->header_banner);
+        }
+    } else {
+        // Fetch the normal header if the plugin is deactivated.
+        fetch_header_image();
+    }
+}
+
+/**
+ * Fetch image header and all the styles for it.
+ *
+ * @uses  get_header_image()
+ * @since 1.0.0
+ * @param array $image
+ */
+function fetch_header_image($image = array()) {
+    $header_data = isset($image) ? $image : get_custom_header(); // Get the header if an image is not provided
     $header_bg_image = '';
 
     if (has_header_image()) {
