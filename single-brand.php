@@ -9,18 +9,18 @@ get_header();
 
 ?>
 
-    <div id="primary" class="content-area">
+    <div id="primary" class="content-area brand-page">
         <main id="main" class="site-main" role="main">
 
             <?php
             /**
              * Functions hooked in to single-brand action
              *
-             * @hooked recent_products           - 30
-             * @hooked render_our_brands_section - 40
-             * @hooked featured_products         - 90
+             * @hooked all_products              - 10
+             * @hooked recent_products           - 20
+             * @hooked show_other_brands_section - 30
              */
-            do_action( 'single-brand' ); ?>
+            do_action( 'single_brand' ); ?>
 
         </main><!-- #main -->
     </div><!-- #primary -->

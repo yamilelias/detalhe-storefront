@@ -604,8 +604,8 @@ if ( ! function_exists( 'storefront_recent_products' ) ) {
 		if ( storefront_is_woocommerce_activated() ) {
 
 			$args = apply_filters( 'storefront_recent_products_args', array(
-				'limit' 			=> 5,
-				'columns' 			=> 5,
+				'limit' 			=> 4,
+				'columns' 			=> 4,
 				'title'				=> __( 'New In', 'storefront' ),
 			) );
 

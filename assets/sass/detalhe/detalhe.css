@@ -56,6 +56,13 @@ body {
       -webkit-transform: scale(1.1);
       transform: scale(1.1); }
 
+.brand-page {
+  padding-bottom: 3em; }
+  .brand-page .show-brands {
+    display: block;
+    margin-left: 33%;
+    width: 100%; }
+
 /*
  * Header
  */
