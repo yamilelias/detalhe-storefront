@@ -19,7 +19,19 @@ body {
   margin-bottom: 0;
 
   .site-main {
+    margin-top: 2em;
     margin-bottom: 0;
+
+    /**
+     * Product thumbnails.
+     */
+    ul.products {
+      li.product {
+        h2 {
+          font-size: 1em !important;
+        }
+      }
+    }
   }
 }
 

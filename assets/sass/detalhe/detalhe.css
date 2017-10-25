@@ -38,7 +38,13 @@ body {
 .content-area {
   margin-bottom: 0; }
   .content-area .site-main {
-    margin-bottom: 0; }
+    margin-top: 2em;
+    margin-bottom: 0;
+    /**
+     * Product thumbnails.
+     */ }
+    .content-area .site-main ul.products li.product h2 {
+      font-size: 1em !important; }
 
 .storefront-brands-section .no-padding-sides {
   padding-left: 0;

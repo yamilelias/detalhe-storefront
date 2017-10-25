@@ -179,8 +179,10 @@ if ( ! function_exists( 'detalhe_brand_products' ) ) {
         if ( storefront_is_woocommerce_activated() ) {
 
             $args = apply_filters( 'storefront_brand_products_args', array(
-                'limit' 			=> -1,
+                'per_page'          => 4,
+                'limit' 			=> 4,
                 'columns' 			=> 4,
+                'category'          => 'paquilia',
                 'title'				=> __( 'All Products', 'storefront' ),
             ) );
 
@@ -191,13 +193,7 @@ if ( ! function_exists( 'detalhe_brand_products' ) ) {
 
             echo '<section class="storefront-product-section storefront-brand-products" aria-label="' . esc_attr__( 'All Products', 'storefront' ) . '">';
 
-            echo '<div class="title"><h2 class="section-title">' . wp_kses_post( $args['title'] ) . '</h2></div>';
-
-            do_action( 'storefront_loop_before' );
-
             echo $shortcode_content;
-
-            do_action( 'storefront_loop_after' );
 
             echo '</section>';
         }
