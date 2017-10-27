@@ -173,7 +173,7 @@ if ( ! function_exists( 'storefront_product_columns_wrapper' ) ) {
 	 */
 	function storefront_product_columns_wrapper() {
 		$columns = storefront_loop_columns();
-		echo '<div class="columns-' . intval( $columns ) . '">';
+		echo '<div class="woocommerce columns-' . intval( $columns ) . '">';
 	}
 }
 
@@ -185,7 +185,7 @@ if ( ! function_exists( 'storefront_loop_columns' ) ) {
 	 * @since  1.0.0
 	 */
 	function storefront_loop_columns() {
-		return apply_filters( 'storefront_loop_columns', 3 ); // 3 products per row
+		return apply_filters( 'storefront_loop_columns', 4 ); // 4 products per row
 	}
 }
 

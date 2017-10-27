@@ -26,17 +26,6 @@ get_header();
     <div id="primary" class="content-area brand-page">
         <main id="main" class="site-main" role="main">
 
-            <?php
-            /**
-             * Functions hooked in to single-brand action
-             *
-             * @hooked all_products              - 10
-             * @hooked recent_products           - 20
-             * @hooked show_other_brands_section - 30
-             */
-//                        do_action( 'single_brand' );
-            ?>
-
             <?php if ( have_posts() ) : ?>
 
                 <?php
@@ -51,8 +40,6 @@ get_header();
                 ?>
 
                 <?php woocommerce_product_loop_start(); ?>
-
-                <?php woocommerce_product_subcategories(); ?>
 
                 <?php while ( have_posts() ) : the_post(); ?>
 
@@ -77,7 +64,7 @@ get_header();
                  *
                  * @hooked woocommerce_pagination - 10
                  */
-                do_action( 'woocommerce_after_shop_loop' );
+//                do_action( 'woocommerce_after_shop_loop' );
                 ?>
 
             <?php elseif ( ! woocommerce_product_subcategories( array( 'before' => woocommerce_product_loop_start( false ), 'after' => woocommerce_product_loop_end( false ) ) ) ) : ?>
