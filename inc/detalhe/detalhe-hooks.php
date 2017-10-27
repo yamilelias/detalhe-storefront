@@ -34,7 +34,6 @@ add_action( 'detalhe_header', 'storefront_primary_navigation_wrapper_close', 68 
 /**
  * Single Brand Page
  */
-//add_action( 'single_brand', 'detalhe_brand_products',      10 );
 add_action( 'single_brand', 'storefront_recent_products',  20 );
 
 /**

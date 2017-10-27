@@ -16,7 +16,6 @@ get_header();
             /**
              * Functions hooked in to single-brand action
              *
-             * @hooked all_products              - 10
              * @hooked recent_products           - 20
              * @hooked show_other_brands_section - 30
              */
