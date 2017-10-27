@@ -90,15 +90,19 @@ function detalhe_get_header_image() {
     // If the plugin is active, then follow the business logic and check if there is a brand present
     if(is_detalhe_core_actived()) {
         $brand = Brands::get_current_brand();
+        $term = get_queried_object();
+
+        if($term instanceof WP_Term) {
+            $brand = Brands::get_current_brand($term->to_array());
+        }
+
         $have_brand = Brands::have_brand();
 
         // If there is a brand present, then display the brand banner.
         if($have_brand) {
-
             fetch_header_image($brand->header_banner);
         }
     } else {
-
         // Fetch the normal header if the plugin is deactivated.
         fetch_header_image();
     }
@@ -228,3 +232,11 @@ function register_custom_menus() {
     );
 }
 add_action( 'init', 'register_custom_menus' );
+
+function new_loop_shop_per_page( $post_per_page ) {
+    // $post_per_page contains the current number of products per page based on the value stored on Options -> Reading
+    $post_per_page = 4;
+
+    return $post_per_page; // Return the number of products you wanna show per page.
+}
+add_filter( 'loop_shop_per_page', 'new_loop_shop_per_page', 20 );

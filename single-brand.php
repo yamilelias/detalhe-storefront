@@ -20,7 +20,8 @@ get_header();
              * @hooked recent_products           - 20
              * @hooked show_other_brands_section - 30
              */
-            do_action( 'single_brand' ); ?>
+            do_action( 'single_brand' );
+            ?>
 
         </main><!-- #main -->
     </div><!-- #primary -->

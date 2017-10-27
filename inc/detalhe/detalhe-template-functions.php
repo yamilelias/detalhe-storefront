@@ -177,16 +177,17 @@ if ( ! function_exists( 'detalhe_brand_products' ) ) {
     function detalhe_brand_products( $args ) {
 
         if ( storefront_is_woocommerce_activated() ) {
+            $brand = \Com\Detalhe\Core\Controllers\Brands::get_current_brand();
 
-            $args = apply_filters( 'storefront_brand_products_args', array(
+            $args = apply_filters( 'storefront_products_args', array(
                 'per_page'          => 4,
-                'limit' 			=> 4,
+                'limit' 			=> -1,
                 'columns' 			=> 4,
-                'category'          => 'paquilia',
+                'category'          => $brand->post_name,
                 'title'				=> __( 'All Products', 'storefront' ),
             ) );
 
-            $shortcode_content = storefront_do_shortcode( 'brand_products', apply_filters( 'storefront_brand_products_shortcode_args', array(
+            $shortcode_content = storefront_do_shortcode( 'products', apply_filters( 'storefront_products_shortcode_args', array(
                 'per_page' => intval( $args['limit'] ),
                 'columns'  => intval( $args['columns'] ),
             ) ) );
