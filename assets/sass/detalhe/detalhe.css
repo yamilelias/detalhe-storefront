@@ -43,6 +43,15 @@ body {
     /**
      * Product thumbnails.
      */ }
+    .content-area .site-main .subcategories {
+      margin-bottom: 1em;
+      text-align: right; }
+      .content-area .site-main .subcategories a :hover {
+        text-decoration: none; }
+      .content-area .site-main .subcategories .subcategory {
+        background-color: black;
+        color: white;
+        font-weight: bold; }
     .content-area .site-main ul.products li.product h2 {
       font-size: 1em !important; }
 
