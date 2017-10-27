@@ -25,6 +25,14 @@ get_header();
 
     <div id="primary" class="content-area brand-page">
         <main id="main" class="site-main" role="main">
+            <?php
+            /**
+             * subcategories_filters hook.
+             *
+             * @hooked generate_subcategories_filters - 10
+             */
+            do_action( 'subcategories_filters' );
+            ?>
 
             <?php if ( have_posts() ) : ?>
 
