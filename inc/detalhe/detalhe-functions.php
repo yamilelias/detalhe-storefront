@@ -220,6 +220,20 @@ function custom_pagination($numpages = '', $pagerange = '', $paged='') {
 }
 
 /**
+ * Returns the path to the provided slide in the images. This function is used for the landing slider.
+ *
+ * @param string $slide
+ * @return string
+ */
+function get_slide_path($slide = ''){
+    $content = '/content'; // TODO: Check that it doesn't have an issue with other kind of implementations
+
+    $path = get_site_url() . $content . '/themes/' . get_template() . '/assets/images/detalhe/landing-slider/' . $slide;
+
+    return $path;
+}
+
+/**
  * Register custom menus.
  *
  * @since 1.0.0
