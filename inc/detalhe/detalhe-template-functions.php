@@ -75,11 +75,8 @@ if ( ! function_exists( 'detalhe_landing_navigation' ) ) {
         <nav id="landing-menu" class="navbar">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="#"><?php detalhe_site_title_or_logo() ?></a>
+                    <a class="navbar-brand" href="#"><img id="brand-logo" alt="Brand" src="<?php echo get_template_directory_uri() . '/assets/images/detalhe/detalhe_blanco_logo.png' ?>"></a>
                 </div>
-                <!--                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">-->
-                <!--                    <span class="navbar-toggler-icon"></span>-->
-                <!--                </button>-->
                 <?php
                 if(has_nav_menu( 'landing-menu' )){
 
