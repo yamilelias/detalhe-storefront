@@ -13,6 +13,10 @@
 body {
   font-family: $text-font;
   font-size: x-large;
+
+  h2 {
+    color: black;
+  }
 }
 
 .content-area {
@@ -39,12 +43,44 @@ body {
       }
     }
 
+    .product-description {
+      padding-top: 1em;
+
+      .summary {
+        text-align: center;
+
+        td {
+          width: 50%;
+          margin: auto;
+
+          select {
+            width: 100%;
+            margin: 0 auto;
+          }
+        }
+
+        .quantity {
+          padding-left: 6em;
+        }
+      }
+    }
+
+    .single-product {
+      div {
+        .product {
+          padding-top: 1em;
+
+        }
+      }
+    }
+
     /**
      * Product thumbnails.
      */
     ul.products {
       li.product {
         h2 {
+          color: black;
           font-size: 1em !important;
         }
       }

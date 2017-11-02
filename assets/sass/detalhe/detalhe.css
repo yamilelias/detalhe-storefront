@@ -34,6 +34,8 @@
 body {
   font-family: "BebasNeue-Light";
   font-size: x-large; }
+  body h2 {
+    color: black; }
 
 .content-area {
   margin-bottom: 0; }
@@ -52,7 +54,22 @@ body {
         background-color: black;
         color: white;
         font-weight: bold; }
+    .content-area .site-main .product-description {
+      padding-top: 1em; }
+      .content-area .site-main .product-description .summary {
+        text-align: center; }
+        .content-area .site-main .product-description .summary td {
+          width: 50%;
+          margin: auto; }
+          .content-area .site-main .product-description .summary td select {
+            width: 100%;
+            margin: 0 auto; }
+        .content-area .site-main .product-description .summary .quantity {
+          padding-left: 6em; }
+    .content-area .site-main .single-product div .product {
+      padding-top: 1em; }
     .content-area .site-main ul.products li.product h2 {
+      color: black;
       font-size: 1em !important; }
 
 .storefront-brands-section .no-padding-sides {
