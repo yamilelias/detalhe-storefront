@@ -1,0 +1,14 @@
+/**
+ * mixins file
+ * User: yamilelias
+ * Author URI: <yamileliassoto@gmail.com>
+ * Date: 3/11/17
+ * Time: 11:28 AM
+ */
+
+
+@mixin transition-brands() {
+  -moz-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
