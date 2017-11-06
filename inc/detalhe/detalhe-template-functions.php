@@ -58,13 +58,13 @@ if ( ! function_exists( 'detalhe_primary_navigation' ) ) {
             ?>
         </nav><!-- #site-navigation -->
         <?php if ( storefront_is_woocommerce_activated() ) { ?>
-            <div class="site-search">
-                <?php the_widget( 'WC_Widget_Product_Search', 'title=' ); ?>
+            <div class="navigation-widgets">
+                <div class="site-search">
+                    <?php the_widget( 'WC_Widget_Product_Search', 'title=' ); ?>
+                </div>
+                <?php display_cart(); // Display the shopping cart?>
             </div>
-        <?php } ?>
-
-        <?php
-        display_cart(); // Display the cart
+        <?php }
     }
 }
 

@@ -29,6 +29,8 @@ body {
 }
 
 .main-navigation {
+  width: 50% !important;
+
   .navbar-header {
     float: left;
     padding-right: $menu-em;
@@ -40,6 +42,17 @@ body {
     li {
       margin-left: $menu-em;
     }
+  }
+}
+
+.navigation-widgets {
+  .site-search {
+    float: left !important;
+    padding-top: 1.2em;
+  }
+
+  .site-header-cart {
+
   }
 }
 
