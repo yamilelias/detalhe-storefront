@@ -44,6 +44,29 @@ body {
   body h2 {
     color: black; }
 
+/*
+ * Header
+ */
+#brand-logo {
+  width: 80px;
+  padding-top: .5em; }
+
+.main-navigation .navbar-header {
+  float: left;
+  padding-right: 1em; }
+.main-navigation .main-menu {
+  padding-top: 1em; }
+  .main-navigation .main-menu li {
+    margin-left: 1em; }
+
+@media screen and (min-width: 768px) {
+  .main-navigation {
+    margin-right: 0 !important; }
+    .main-navigation a {
+      padding: 0; } }
+/**
+ * Content and body
+ */
 .content-area {
   margin-bottom: 0; }
   .content-area .site-main {
@@ -91,46 +114,44 @@ body {
     display: block; }
     .storefront-brands-section .no-padding-sides .item .brand-link {
       display: block;
-      position: relative; }
-      .storefront-brands-section .no-padding-sides .item .brand-link .caption {
-        position: absolute;
-        width: 100%;
-        height: 100%;
+      position: relative;
+      top: 0; }
+      .storefront-brands-section .no-padding-sides .item .brand-link:hover p {
+        opacity: 1; }
+      .storefront-brands-section .no-padding-sides .item .brand-link p {
+        color: white;
+        font-family: "BebasNeue-Bold";
+        font-size: 50px;
         opacity: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -50px;
+        margin-left: -100px;
         -moz-transition: all 0.3s ease;
         -webkit-transition: all 0.3s ease;
         transition: all 0.3s ease; }
-        .storefront-brands-section .no-padding-sides .item .brand-link .caption:hover {
-          opacity: 1; }
-        .storefront-brands-section .no-padding-sides .item .brand-link .caption .caption-content {
-          position: absolute;
-          width: 100%;
-          text-align: center;
-          top: 50%;
-          color: white; }
-          .storefront-brands-section .no-padding-sides .item .brand-link .caption .caption-content i {
-            margin-top: -12px; }
-          .storefront-brands-section .no-padding-sides .item .brand-link .caption .caption-content h3, .storefront-brands-section .no-padding-sides .item .brand-link .caption .caption-content h4 {
-            margin: 0; }
-    .storefront-brands-section .no-padding-sides .item img {
-      max-width: 100%;
-      -moz-transition: all 0.3s ease;
-      -webkit-transition: all 0.3s ease;
-      transition: all 0.3s ease; }
-      .storefront-brands-section .no-padding-sides .item img:hover {
+      .storefront-brands-section .no-padding-sides .item .brand-link img {
+        position: relative;
+        top: 0;
+        max-width: 100%;
+        -moz-transition: all 0.3s ease;
+        -webkit-transition: all 0.3s ease;
+        transition: all 0.3s ease; }
+        .storefront-brands-section .no-padding-sides .item .brand-link img:hover {
+          -webkit-filter: blur(10px) grayscale(100%);
+          -moz-transform: scale(1.1);
+          -webkit-transform: scale(1.1);
+          transform: scale(1.1); }
+      .storefront-brands-section .no-padding-sides .item .brand-link:hover img {
+        max-width: 100%;
+        -moz-transition: all 0.3s ease;
+        -webkit-transition: all 0.3s ease;
+        transition: all 0.3s ease;
         -webkit-filter: blur(10px) grayscale(100%);
         -moz-transform: scale(1.1);
         -webkit-transform: scale(1.1);
         transform: scale(1.1); }
-    .storefront-brands-section .no-padding-sides .item:hover img {
-      max-width: 100%;
-      -moz-transition: all 0.3s ease;
-      -webkit-transition: all 0.3s ease;
-      transition: all 0.3s ease;
-      -webkit-filter: blur(10px) grayscale(100%);
-      -moz-transform: scale(1.1);
-      -webkit-transform: scale(1.1);
-      transform: scale(1.1); }
 
 .brand-page {
   padding-bottom: 3em; }
@@ -138,27 +159,18 @@ body {
     display: block;
     margin-left: 33%;
     width: 100%; }
+    .brand-page .show-brands .item .brand-link {
+      color: black;
+      display: block;
+      font-weight: bold;
+      position: relative;
+      text-align: center; }
+      .brand-page .show-brands .item .brand-link:hover {
+        text-decoration: none; }
+      .brand-page .show-brands .item .brand-link img {
+        position: relative;
+        max-width: 100%; }
 
-/*
- * Header
- */
-#brand-logo {
-  width: 80px;
-  padding-top: .5em; }
-
-.main-navigation .navbar-header {
-  float: left;
-  padding-right: 1em; }
-.main-navigation .main-menu {
-  padding-top: 1em; }
-  .main-navigation .main-menu li {
-    margin-left: 1em; }
-
-@media screen and (min-width: 768px) {
-  .main-navigation {
-    margin-right: 0 !important; }
-    .main-navigation a {
-      padding: 0; } }
 /*
  * Footer
  */

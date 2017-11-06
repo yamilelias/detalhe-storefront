@@ -20,6 +20,42 @@ body {
   }
 }
 
+/*
+ * Header
+ */
+#brand-logo {
+  width: 80px;
+  padding-top: .5em;
+}
+
+.main-navigation {
+  .navbar-header {
+    float: left;
+    padding-right: $menu-em;
+  }
+
+  .main-menu {
+    padding-top: $menu-em;
+
+    li {
+      margin-left: $menu-em;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .main-navigation {
+    margin-right: 0 !important;
+
+    a {
+      padding: 0;
+    }
+  }
+}
+
+/**
+ * Content and body
+ */
 .content-area {
   margin-bottom: 0;
 
@@ -105,73 +141,58 @@ body {
       .brand-link {
         display: block;
         position: relative;
-
-        .caption{
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          opacity: 0;
-          @include transition-brands();
-
-          &:hover{
-            opacity: 1;
-          }
-
-          .caption-content{
-            position: absolute;
-            width: 100%;
-            text-align: center;
-            top: 50%;
-            color: white;
-
-            i{
-              margin-top: -12px;
-            }
-
-            h3, h4{
-              margin: 0;
-            }
-          }
-        }
-      }
-
-      img {
-        max-width: 100%;
-        @include transition-brands();
+        top: 0;
 
         &:hover {
-          // Blur image into black & white
-          -webkit-filter: blur(10px) grayscale(100%);
-
-          // Scale image
-          -moz-transform: scale(1.1);
-          -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+          p {
+            opacity: 1;
+          }
         }
-      }
 
-      &:hover {
+        p {
+          color: white;
+          font-family: $brand-font;
+          font-size: 50px;
+          opacity: 0;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          margin-top: -50px;
+          margin-left: -100px;
+          @include transition-brands();
+        }
+
         img {
+          position: relative;
+          top: 0;
           max-width: 100%;
           @include transition-brands();
 
-          // Blur image into black & white
-          -webkit-filter: blur(10px) grayscale(100%);
+          &:hover {
+            // Blur image into black & white
+            -webkit-filter: blur(10px) grayscale(100%);
 
-          // Scale image
-          -moz-transform: scale(1.1);
-          -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+            // Scale image
+            -moz-transform: scale(1.1);
+            -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+          }
         }
 
-        //&:after{
-        //  .brand-link {
-        //    .caption {
-        //      position: relative;
-        //      opacity: 1;
-        //    }
-        //  }
-        //}
+        &:hover {
+          img {
+            max-width: 100%;
+            @include transition-brands();
+
+            // Blur image into black & white
+            -webkit-filter: blur(10px) grayscale(100%);
+
+            // Scale image
+            -moz-transform: scale(1.1);
+            -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+          }
+        }
       }
     }
   }
@@ -184,38 +205,35 @@ body {
     display: block;
     margin-left: 33%;
     width: 100%;
-  }
-}
 
-/*
- * Header
- */
-#brand-logo {
-  width: 80px;
-  padding-top: .5em;
-}
+    .item {
+      .brand-link {
+        color: black;
+        display: block;
+        font-weight: bold;
+        position: relative;
+        text-align: center;
 
-.main-navigation {
-  .navbar-header {
-    float: left;
-    padding-right: $menu-em;
-  }
+        &:hover {
+          text-decoration: none;
+        }
 
-  .main-menu {
-    padding-top: $menu-em;
+        img {
+          position: relative;
+          max-width: 100%;
 
-    li {
-      margin-left: $menu-em;
-    }
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .main-navigation {
-    margin-right: 0 !important;
-
-    a {
-      padding: 0;
+          // TODO: Check them to be equal to the brands page
+          //&:hover {
+          //  max-width: 100%;
+          //  @include transition-brands();
+          //
+          //  // Scale image
+          //  -moz-transform: scale(1.1);
+          //  -webkit-transform: scale(1.1);
+          //  transform: scale(1.1);
+          //}
+        }
+      }
     }
   }
 }
