@@ -217,7 +217,7 @@ footer {
         float: right;
         margin-top: 10px; }
 
-/*
+/**
  * Landing
  */
 .carousel-item {
@@ -250,6 +250,8 @@ footer {
   position: fixed;
   width: 100%;
   z-index: 6; }
+  #landing-menu .navbar-toggler {
+    display: none; }
   #landing-menu .container .wrap {
     margin: 10px auto; }
     #landing-menu .container .wrap .landing-menu {
@@ -262,6 +264,27 @@ footer {
         #landing-menu .container .wrap .landing-menu li a {
           color: white; }
 
+@media screen and (max-width: 700px) {
+  #landing-menu .navbar-toggler {
+    display: block;
+    margin-right: 1.5em;
+    margin-top: 1.5em;
+    float: right;
+    background: none;
+    border: 5px solid white;
+    border-radius: 20px; }
+    #landing-menu .navbar-toggler:active {
+      border: 5px solid black; }
+    #landing-menu .navbar-toggler i {
+      color: white !important; }
+  #landing-menu .navbar-brand {
+    margin-left: .7em; }
+  #landing-menu #menu-items {
+    float: right; }
+    #landing-menu #menu-items .landing-menu {
+      text-align: right; }
+      #landing-menu #menu-items .landing-menu li {
+        padding: .5em 0; } }
 /*
  * Cart modifications
  */

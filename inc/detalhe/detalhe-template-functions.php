@@ -81,6 +81,9 @@ if ( ! function_exists( 'detalhe_landing_navigation' ) ) {
         <nav id="landing-menu" class="navbar">
             <div class="container">
                 <div class="navbar-header">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu-items" aria-expanded="false">
+                        <i class="fa fa-bars" aria-hidden="true"></i>
+                    </button>
                     <a class="navbar-brand" href="#"><img id="brand-logo" alt="Brand" src="<?php echo get_template_directory_uri() . '/assets/images/detalhe/detalhe_blanco_logo.png' ?>"></a>
                 </div>
                 <?php
@@ -90,14 +93,15 @@ if ( ! function_exists( 'detalhe_landing_navigation' ) ) {
                         array(
                             'container'         => 'div',
                             'theme_location'	=> 'landing-menu',
-                            'container_class'	=> 'wrap',
+                            'container_class'	=> 'wrap collapse navbar-collapse',
+                            'container_id'      => 'menu-items',
                             'menu_class'        => '',
                             'items_wrap'        => '<ul class="landing-menu nav navbar-nav">%3$s</ul>'
                         )
                     );
                 } else {
                     ?>
-                    <div class="wrap">
+                    <div class="wrap collapse navbar-collapse" id="menu-items">
                         <ul class="landing-menu nav navbar-nav">
                             <li><a href="#">Contact</a></li>
                             <li><a href="#">Store</a></li>

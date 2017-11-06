@@ -323,7 +323,7 @@ footer {
 }
 
 
-/*
+/**
  * Landing
  */
 
@@ -355,13 +355,17 @@ footer {
   }
 }
 
-#landing-menu{
+#landing-menu {
   font-family: $menu-font;
   font-size: x-large;
   height: 70px;
   position: fixed;
   width: 100%;
   z-index: 6;
+
+  .navbar-toggler {
+    display: none;
+  }
 
   .container {
     .wrap {
@@ -381,6 +385,44 @@ footer {
           a {
             color: white;
           }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  #landing-menu {
+    .navbar-toggler {
+      display: block;
+      margin-right: 1.5em;
+      margin-top: 1.5em;
+      float: right;
+      background: none;
+      border: 5px solid white;
+      border-radius: 20px;
+
+      &:active {
+        border: 5px solid black;
+      }
+
+      i {
+        color: white !important;
+      }
+    }
+
+    .navbar-brand {
+      margin-left: .7em;
+    }
+
+    #menu-items {
+      float: right;
+
+      .landing-menu {
+        text-align: right;
+
+        li {
+          padding: .5em 0;
         }
       }
     }
