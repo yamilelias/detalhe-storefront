@@ -211,6 +211,24 @@ body {
   }
 }
 
+@media screen and (max-width: 700px) {
+  .storefront-brands-section {
+    .no-padding-sides {
+      .item {
+        .brand-link {
+          p {
+            font-size: larger;
+            top: 40%;
+            left: 25%;
+            margin: 0 0 0 0;
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
 .brand-page {
   padding-bottom: 3em;
 
@@ -322,6 +340,23 @@ footer {
   }
 }
 
+@media screen and (max-width: 700px) {
+  .footer-widgets {
+    text-align: center;
+
+    .operator {
+      margin-left: 10em;
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .footer-widgets {
+    .operator {
+      margin-left: 3em;
+    }
+  }
+}
 
 /**
  * Landing

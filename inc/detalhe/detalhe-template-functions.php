@@ -40,11 +40,15 @@ if ( ! function_exists( 'detalhe_primary_navigation' ) ) {
      */
     function detalhe_primary_navigation() {
         $logo_item = '<div class="navbar-header">' .
-//                        '<button class="menu-toggle" aria-controls="site-navigation" aria-expanded="false"><span>' . esc_attr( apply_filters( 'storefront_menu_toggle_text', __( 'Menu', 'storefront' ) ) ) .'</span></button>' .
-            '<a class="navbar-brand" href="' . get_permalink( wc_get_page_id( 'shop' ) ) .'">'
-            . detalhe_site_title_or_logo(false) . // So it won't echo and return the item
-            '</a>' .
-            '</div>';
+                        '<div class="navbar-header">' .
+                            '<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu-items" aria-expanded="false">' .
+                                    '<i class="fa fa-bars" aria-hidden="true"></i>' .
+                            '</button>' .
+                            '<a class="navbar-brand" href="' . get_permalink( wc_get_page_id( 'shop' ) ) .'">'
+                                . detalhe_site_title_or_logo(false) . // So it won't echo and return the item
+                            '</a>' .
+                        '</div>' .
+                    '</div>';
         ?>
         <nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_html_e( 'Primary Navigation', 'storefront' ); ?>">
             <?php
@@ -52,6 +56,14 @@ if ( ! function_exists( 'detalhe_primary_navigation' ) ) {
                 array(
                     'theme_location'	=> 'primary',
                     'container_class'	=> 'primary-navigation container-fluid',
+                    'items_wrap'        => $logo_item .'<ul class="main-menu">%3$s</ul>',
+                )
+            );
+
+            wp_nav_menu(
+                array(
+                    'theme_location'	=> 'handheld',
+                    'container_class'	=> 'handheld-navigation container-fluid',
                     'items_wrap'        => $logo_item .'<ul class="main-menu">%3$s</ul>',
                 )
             );
