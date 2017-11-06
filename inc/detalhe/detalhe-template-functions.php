@@ -41,7 +41,7 @@ if ( ! function_exists( 'detalhe_primary_navigation' ) ) {
     function detalhe_primary_navigation() {
         $logo_item = '<div class="navbar-header">' .
 //                        '<button class="menu-toggle" aria-controls="site-navigation" aria-expanded="false"><span>' . esc_attr( apply_filters( 'storefront_menu_toggle_text', __( 'Menu', 'storefront' ) ) ) .'</span></button>' .
-            '<a class="navbar-brand" href="'.get_site_url().'/shop">'
+            '<a class="navbar-brand" href="' . get_permalink( wc_get_page_id( 'shop' ) ) .'">'
             . detalhe_site_title_or_logo(false) . // So it won't echo and return the item
             '</a>' .
             '</div>';
@@ -57,6 +57,12 @@ if ( ! function_exists( 'detalhe_primary_navigation' ) ) {
             );
             ?>
         </nav><!-- #site-navigation -->
+        <?php if ( storefront_is_woocommerce_activated() ) { ?>
+            <div class="site-search">
+                <?php the_widget( 'WC_Widget_Product_Search', 'title=' ); ?>
+            </div>
+        <?php } ?>
+
         <?php
         display_cart(); // Display the cart
     }
