@@ -226,7 +226,8 @@ function custom_pagination($numpages = '', $pagerange = '', $paged='') {
  * @return string
  */
 function get_slide_path($slide = ''){
-    $content = '/content'; // TODO: Check that it doesn't have an issue with other kind of implementations
+    $content = '/wp-content'; // TODO: Check that it doesn't have an 
+issue with other kind of implementations
 
     $path = get_site_url() . $content . '/themes/' . get_template() . '/assets/images/detalhe/landing-slider/' . $slide;
 
