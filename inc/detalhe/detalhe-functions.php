@@ -18,6 +18,16 @@ function is_detalhe_core_actived(){
     return class_exists( 'Detalhe_Core' ) ? true : false;
 }
 
+/**
+ * Validate themosis is present in the installation.
+ *
+ * @since 1.0.0
+ * @return bool
+ */
+function is_themosis_active() {
+    return class_exists( 'Themosis' ) ? true : false;
+}
+
 if ( ! function_exists( 'detalhe_custom_styles_and_scripts' ) ) {
     /**
      * Function to generate the styles and scripts needed in head
@@ -226,7 +236,7 @@ function custom_pagination($numpages = '', $pagerange = '', $paged='') {
  * @return string
  */
 function get_slide_path($slide = ''){
-    $content = '/wp-content'; // TODO: Check that it doesn't have an issue with other kind of implementations
+    $content = dirname( dirname( get_template() ) ); // Get wp-content or content depending of installation
 
     $path = get_site_url() . $content . '/themes/' . get_template() . '/assets/images/detalhe/landing-slider/' . $slide;
 
