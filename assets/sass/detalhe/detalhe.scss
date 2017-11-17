@@ -70,21 +70,16 @@ body {
 
     .search-form {
       display: none;
-      left: 18%;
       position: absolute;
       top: 100%;
-      width: 82%;
-      z-index: 999;
+      width: 66%;
+      right: -23%;
     }
   }
 
   .site-search {
     float: left !important;
     padding-top: 1.2em;
-
-    .search-field {
-      background-color: #fff;
-    }
   }
 
   /*
@@ -97,6 +92,10 @@ body {
       }
     }
   }
+}
+
+.widget_product_search form input[type=search], .widget_product_search form input[type=text], .widget_search form input[type=search], .widget_search form input[type=text] {
+  width: 30% !important;
 }
 
 @media screen and (min-width: 768px){
