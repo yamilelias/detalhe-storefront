@@ -71,8 +71,13 @@ if ( ! function_exists( 'detalhe_primary_navigation' ) ) {
         </nav><!-- #site-navigation -->
         <?php if ( storefront_is_woocommerce_activated() ) { ?>
             <div class="navigation-widgets">
-                <div class="site-search">
-                    <?php the_widget( 'WC_Widget_Product_Search', 'title=' ); ?>
+                <div class="search-container">
+                    <span class="search-icon">
+                        <a href="javascript:void(0);"><i class="fa fa-search"></i></a>
+                    </span>
+                    <div class="search-form" style="display: none;">
+                        <?php the_widget( 'WC_Widget_Product_Search', 'title=' ); ?>
+                    </div>
                 </div>
                 <?php display_cart(); // Display the shopping cart?>
             </div>

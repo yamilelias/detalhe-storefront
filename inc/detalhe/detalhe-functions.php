@@ -69,6 +69,10 @@ if ( ! function_exists( 'detalhe_custom_styles_and_scripts' ) ) {
         if(!wp_style_is('detalhe-css')){
             wp_enqueue_style( 'detalhe-css', get_template_directory_uri() . '/assets/sass/detalhe/detalhe.css', ['bootstrap-css']);
         }
+
+        if(!wp_script_is('detalhe-js')){
+            wp_enqueue_script('detalhe-js', get_template_directory_uri() . '/assets/js/detalhe.js', ['vendor-jquery']);
+        }
     }
 }
 
