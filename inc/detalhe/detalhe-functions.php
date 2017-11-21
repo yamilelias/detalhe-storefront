@@ -240,7 +240,9 @@ function custom_pagination($numpages = '', $pagerange = '', $paged='') {
  * @return string
  */
 function get_slide_path($slide = ''){
-    $content = dirname( dirname( get_template() ) ); // Get wp-content or content depending of installation
+    // FIXME: Make it work so it gets wp-content or content
+    // $content = dirname( dirname( get_template() ) ); // Get wp-content or content depending of installation
+    $content = '/wp-content';
 
     $path = get_site_url() . $content . '/themes/' . get_template() . '/assets/images/detalhe/landing-slider/' . $slide;
 
