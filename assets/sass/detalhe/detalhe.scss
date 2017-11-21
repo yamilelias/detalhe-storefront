@@ -37,7 +37,6 @@ body {
   }
 
   .main-menu {
-    padding-top: $menu-em;
 
     li {
       margin-left: $menu-em;
@@ -45,9 +44,10 @@ body {
   }
 }
 
-@media screen and (min-width: 768px){
+@media screen and (min-width: 1024px){
   .main-navigation {
-    .navbar-header {
+    .navbar-toggler {
+      display: none;
     }
 
     .main-menu {
@@ -59,8 +59,8 @@ body {
 .navigation-widgets {
   .search-container {
     float: left;
-    margin-left: 27%;
-    padding-top: 2em;
+    margin-left: 26%;
+    padding-top: 1.6em;
 
     .search-icon {
       i {
@@ -98,7 +98,7 @@ body {
   width: 30% !important;
 }
 
-@media screen and (min-width: 768px){
+@media only screen and (min-width: 768px){
   .woocommerce-active{
     .site-header {
       .site-container {
@@ -120,7 +120,17 @@ body {
   }
 }
 
-@media screen and (min-width: 768px) {
+@media only screen and (max-width: 768px) {
+  .woocommerce-active{
+    .site-header {
+      .site-header-cart {
+        float: right;
+        margin-right: -2.5em;
+        margin-bottom: 0;
+      }
+    }
+  }
+
   .main-navigation {
     margin-right: 0 !important;
 

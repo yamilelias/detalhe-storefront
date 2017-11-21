@@ -56,12 +56,12 @@ body {
   .main-navigation .navbar-header {
     float: left;
     padding-right: 1em; }
-  .main-navigation .main-menu {
-    padding-top: 1em; }
-    .main-navigation .main-menu li {
-      margin-left: 1em; }
+  .main-navigation .main-menu li {
+    margin-left: 1em; }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
+  .main-navigation .navbar-toggler {
+    display: none; }
   .main-navigation .main-menu {
     width: 700px; } }
 .navigation-widgets {
@@ -70,8 +70,8 @@ body {
    */ }
   .navigation-widgets .search-container {
     float: left;
-    margin-left: 27%;
-    padding-top: 2em; }
+    margin-left: 26%;
+    padding-top: 1.6em; }
     .navigation-widgets .search-container .search-icon i {
       color: black; }
     .navigation-widgets .search-container .search-form {
@@ -89,7 +89,7 @@ body {
 .widget_product_search form input[type=search], .widget_product_search form input[type=text], .widget_search form input[type=search], .widget_search form input[type=text] {
   width: 30% !important; }
 
-@media screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) {
   .woocommerce-active .site-header .site-container {
     margin-left: 10%;
     float: left; }
@@ -100,7 +100,12 @@ body {
     margin-bottom: 0; }
   .woocommerce-active .site-header .cart-contents {
     padding: 1.618em 2em; } }
-@media screen and (min-width: 768px) {
+@media only screen and (max-width: 768px) {
+  .woocommerce-active .site-header .site-header-cart {
+    float: right;
+    margin-right: -2.5em;
+    margin-bottom: 0; }
+
   .main-navigation {
     margin-right: 0 !important; }
     .main-navigation a {
