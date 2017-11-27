@@ -18,7 +18,8 @@ add_action('detalhe_landing_header', 'detalhe_landing_navigation', 10);
 /**
  * Landing page
  */
-add_action('detalhe_landing_page', 'detalhe_landing_carousel', 10);
+add_action('detalhe_landing_page', 'detalhe_landing_carousel',  10);
+add_action('detalhe_landing_page', 'detalhe_contact_modal',     30);
 
 /**
  * Header

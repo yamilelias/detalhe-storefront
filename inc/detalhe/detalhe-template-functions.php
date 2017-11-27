@@ -113,7 +113,11 @@ if ( ! function_exists( 'detalhe_landing_navigation' ) ) {
                             'container_class'	=> 'wrap collapse navbar-collapse',
                             'container_id'      => 'menu-items',
                             'menu_class'        => '',
-                            'items_wrap'        => '<ul class="landing-menu nav navbar-nav">%3$s</ul>'
+                            'items_wrap'        =>
+                                '<ul class="landing-menu nav navbar-nav">' .
+                                    '<li><a href="#" data-toggle="modal" data-target="#myModal">Contact</a></li>' .
+                                    '%3$s' .
+                                '</ul>'
                         )
                     );
                 } else {
@@ -131,6 +135,48 @@ if ( ! function_exists( 'detalhe_landing_navigation' ) ) {
         </nav>
         <?php
     }
+}
+
+/**
+ * Add a modal when is clicked in the landing menu.
+ *
+ * @since 1.0.0
+ */
+function detalhe_contact_modal() {
+    ?>
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <a href="#" data-dismiss="modal">
+                        <i class="ion-ios-close-empty"></i>
+                    </a>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Nombre:</label>
+                            <input type="text" class="form-control transparent" id="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" class="form-control transparent" id="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje:</label>
+                            <textarea rows="4" cols="30" class="form-control transparent" id="message"></textarea>
+                        </div>
+                        <button type="submit" class="button">Submit</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <?php
 }
 
 if ( ! function_exists( 'detalhe_landing_carousel' ) ) {

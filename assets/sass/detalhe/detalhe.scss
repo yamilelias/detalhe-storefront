@@ -537,3 +537,58 @@ footer {
     }
   }
 }
+
+/**
+ * Contact modal
+ */
+.modal {
+  .modal-dialog {
+    margin-top: 6.5em;
+
+    .modal-content {
+      @include transparent-border(2px);
+      color: white;
+
+      .modal-header {
+        padding: 5px 15px 0 15px;
+
+        a {
+          color: white;
+          float: right;
+          font-size: larger;
+          text-shadow: none;
+        }
+
+        h4 {
+          font-size: larger;
+          font-weight: bolder;
+        }
+
+      }
+
+      .modal-body {
+        form {
+          margin-bottom: 1.7em;
+
+          .form-group {
+            margin-bottom: 10px;
+            .transparent {
+              @include transparent-border(1px);
+              color: white;
+              font-size: large;
+            }
+          }
+
+          .button {
+            @include transparent-border(1px);
+            color: white;
+            float: right;
+            font-size: large;
+            margin-right: 8px;
+            padding: 5px 15px 4px 15px;
+          }
+        }
+      }
+    }
+  }
+}

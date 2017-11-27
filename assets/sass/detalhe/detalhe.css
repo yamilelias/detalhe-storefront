@@ -340,5 +340,41 @@ footer {
       text-align: right; }
       #landing-menu #menu-items .landing-menu li {
         padding: .5em 0; } }
+/**
+ * Contact modal
+ */
+.modal .modal-dialog {
+  margin-top: 6.5em; }
+  .modal .modal-dialog .modal-content {
+    background: transparent;
+    border: 2px solid white;
+    color: white; }
+    .modal .modal-dialog .modal-content .modal-header {
+      padding: 5px 15px 0 15px; }
+      .modal .modal-dialog .modal-content .modal-header a {
+        color: white;
+        float: right;
+        font-size: larger;
+        text-shadow: none; }
+      .modal .modal-dialog .modal-content .modal-header h4 {
+        font-size: larger;
+        font-weight: bolder; }
+    .modal .modal-dialog .modal-content .modal-body form {
+      margin-bottom: 1.7em; }
+      .modal .modal-dialog .modal-content .modal-body form .form-group {
+        margin-bottom: 10px; }
+        .modal .modal-dialog .modal-content .modal-body form .form-group .transparent {
+          background: transparent;
+          border: 1px solid white;
+          color: white;
+          font-size: large; }
+      .modal .modal-dialog .modal-content .modal-body form .button {
+        background: transparent;
+        border: 1px solid white;
+        color: white;
+        float: right;
+        font-size: large;
+        margin-right: 8px;
+        padding: 5px 15px 4px 15px; }
 
 /*# sourceMappingURL=detalhe.css.map */

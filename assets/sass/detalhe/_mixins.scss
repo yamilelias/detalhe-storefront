@@ -12,3 +12,8 @@
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
+
+@mixin transparent-border($width) {
+  background: transparent;
+  border: $width solid white;
+}
