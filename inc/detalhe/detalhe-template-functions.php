@@ -115,7 +115,7 @@ if ( ! function_exists( 'detalhe_landing_navigation' ) ) {
                             'menu_class'        => '',
                             'items_wrap'        =>
                                 '<ul class="landing-menu nav navbar-nav">' .
-                                    '<li><a href="#" data-toggle="modal" data-target="#myModal">Contact</a></li>' .
+                                    '<li data-toggle="collapse" data-target="#menu-items"><a href="#" data-toggle="modal" data-target="#myModal">Contacto</a></li>' .
                                     '%3$s' .
                                 '</ul>'
                         )

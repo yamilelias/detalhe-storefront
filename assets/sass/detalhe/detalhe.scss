@@ -57,23 +57,31 @@ body {
 }
 
 .navigation-widgets {
-  .search-container {
-    float: left;
-    margin-left: 26%;
-    padding-top: 1.6em;
+  @media screen and (min-width: 700px) {
+    .search-container {
+      float: left;
+      margin-left: 26%;
+      padding-top: 1.6em;
 
-    .search-icon {
-      i {
-        color: black;
+      .search-icon {
+        i {
+          color: black;
+        }
+      }
+
+      .search-form {
+        display: none;
+        position: absolute;
+        top: 100%;
+        width: 66%;
+        right: -23%;
       }
     }
+  }
 
-    .search-form {
+  @media screen and (max-width: 700px){
+    .search-container {
       display: none;
-      position: absolute;
-      top: 100%;
-      width: 66%;
-      right: -23%;
     }
   }
 
@@ -94,11 +102,11 @@ body {
   }
 }
 
-.widget_product_search form input[type=search], .widget_product_search form input[type=text], .widget_search form input[type=search], .widget_search form input[type=text] {
-  width: 30% !important;
-}
+@media only screen and (min-width: 1100px){
+  .widget_product_search form input[type=search], .widget_product_search form input[type=text], .widget_search form input[type=search], .widget_search form input[type=text] {
+    width: 30% !important;
+  }
 
-@media only screen and (min-width: 768px){
   .woocommerce-active{
     .site-header {
       .site-container {
@@ -491,8 +499,17 @@ footer {
             color: black;
           }
 
+          &:focus {
+            border: none;
+          }
+
           a {
             color: white;
+
+            &:focus {
+              border: none;
+              background: transparent;
+            }
           }
         }
       }
@@ -589,6 +606,10 @@ footer {
           }
         }
       }
+    }
+
+    @media screen and (max-width: 400px){
+      margin-top: 8em;
     }
   }
 }
