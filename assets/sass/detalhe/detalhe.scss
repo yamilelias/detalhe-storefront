@@ -56,8 +56,97 @@ body {
   }
 }
 
+@media screen and (max-width: 700px) {
+  .site-header {
+    padding-bottom: 0;
+  }
+  .main-navigation {
+    .navbar-header {
+      float: inherit;
+      padding-right: 0;
+    }
+  }
+  #site-navigation {
+    width: 100% !important;
+
+    .navbar-toggler {
+      display: block;
+      margin-top: 1em;
+      float: right;
+      background: none;
+      border: 3px solid black;
+      border-radius: 20px;
+
+      &:active {
+        border: 5px solid black;
+      }
+
+      i {
+        color: black !important;
+      }
+    }
+
+    .navbar-brand {
+      margin-left: .7em;
+    }
+
+    #menu-items {
+      float: right;
+
+      .main-menu {
+        text-align: right;
+
+        li {
+          //padding: .5em 0;
+        }
+      }
+    }
+  }
+}
+
+@media screen and(max-width: 800px){
+  .site-header {
+    border-bottom-color: transparent;
+  }
+
+  .main-navigation {
+    width: 100% !important;
+
+    .navbar-header {
+      .navbar-toggler {
+        display: none;
+      }
+    }
+  }
+
+  .navigation-widgets {
+    .search-container {
+      float: left;
+      margin-left: 1em;
+
+      .search-icon {
+        i {
+          color: black;
+        }
+      }
+
+      .search-form {
+        form {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .site-header-cart {
+      a {
+        padding: 0;
+      }
+    }
+  }
+}
+
 .navigation-widgets {
-  @media screen and (min-width: 700px) {
+  @media screen and (min-width: 800px) {
     .search-container {
       float: left;
       margin-left: 26%;
@@ -133,7 +222,7 @@ body {
     .site-header {
       .site-header-cart {
         float: right;
-        margin-right: -2.5em;
+        //margin-right: -2.5em;
         margin-bottom: 0;
       }
     }
@@ -220,6 +309,14 @@ body {
   }
 }
 
+@media screen and (max-width: 700px) {
+  .content-area{
+    .site-main{
+      margin-top: 0;
+    }
+  }
+}
+
 /**
  * Brands Section
  */
@@ -295,6 +392,13 @@ body {
 
 @media screen and (max-width: 700px) {
   .storefront-brands-section {
+    .container {
+      margin-left: -1.4em;
+      margin-right: -1.4em;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
     .no-padding-sides {
       .item {
         .brand-link {
@@ -307,6 +411,17 @@ body {
           }
         }
       }
+    }
+  }
+}
+
+@media screen and (min-width: 700px) and (max-width: 1000px) {
+  .storefront-brands-section {
+    .container {
+      margin-left: -2.2em;
+      margin-right: -1.4em;
+      padding-left: 0;
+      padding-right: 0;
     }
   }
 }
