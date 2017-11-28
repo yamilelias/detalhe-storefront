@@ -323,6 +323,10 @@ footer {
     padding-top: 0 !important; }
     footer .footer-widgets .widget {
       margin: 0 0 .706325903em !important; }
+      footer .footer-widgets .widget .widget-title, footer .footer-widgets .widget .widgettitle {
+        padding: 0;
+        margin-bottom: 0;
+        margin-top: 20px; }
     footer .footer-widgets .social-media-widget i {
       padding-left: .5em;
       font-size: 40px; }
@@ -360,7 +364,9 @@ footer {
       margin-left: 10em; } }
 @media screen and (max-width: 400px) {
   .footer-widgets .operator {
-    margin-left: 3em; } }
+    margin-left: 3em; }
+  .footer-widgets form {
+    margin-bottom: 6em; } }
 /**
  * Landing
  */
@@ -473,5 +479,12 @@ footer {
   @media screen and (max-width: 400px) {
     .modal .modal-dialog {
       margin-top: 8em; } }
+
+/*
+ * Cart & checkout
+ */
+@media (min-width: 768px) {
+  .woocommerce table .cart td, .woocommerce table .cart th {
+    padding: 0.6em; } }
 
 /*# sourceMappingURL=detalhe.css.map */

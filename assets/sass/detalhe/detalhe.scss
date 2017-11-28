@@ -548,6 +548,12 @@ footer {
 
     .widget {
       margin: 0 0 .706325903em !important;
+
+      .widget-title, .widgettitle {
+        padding: 0;
+        margin-bottom: 0;
+        margin-top: 20px;
+      }
     }
 
     .social-media-widget {
@@ -621,6 +627,10 @@ footer {
   .footer-widgets {
     .operator {
       margin-left: 3em;
+    }
+
+    form {
+      margin-bottom: 6em;
     }
   }
 }
@@ -795,6 +805,22 @@ footer {
 
     @media screen and (max-width: 400px){
       margin-top: 8em;
+    }
+  }
+}
+
+/*
+ * Cart & checkout
+ */
+// FIXME: It have a bug in the iPad size but this doesn't work
+@media (min-width: 768px) {
+  .woocommerce {
+    table {
+      .cart {
+        td, th {
+          padding: 0.6em;
+        }
+      }
     }
   }
 }
