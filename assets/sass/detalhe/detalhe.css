@@ -205,6 +205,9 @@ body {
         width: 150px;
         margin-top: 5px;
         padding: .6em 1em; } }
+@media screen and (max-width: 800px) {
+  .content-area .site-main .product-description .summary .quantity {
+    padding-left: 0; } }
 /**
  * Brands Section
  */

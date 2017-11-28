@@ -327,6 +327,20 @@ body {
   }
 }
 
+@media screen and (max-width: 800px) {
+  .content-area{
+    .site-main{
+      .product-description {
+        .summary {
+          .quantity {
+            padding-left: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
 /**
  * Brands Section
  */
