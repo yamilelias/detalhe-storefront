@@ -150,20 +150,21 @@ function detalhe_contact_modal() {
                     </a>
                 </div>
                 <div class="modal-body">
+                    <!-- TODO: Add post method to sent mail -->
                     <form>
                         <div class="form-group">
                             <label for="name">Nombre:</label>
                             <input type="text" class="form-control transparent" id="name">
                         </div>
                         <div class="form-group">
-                            <label for="email">Email:</label>
+                            <label for="email">Correo:</label>
                             <input type="email" class="form-control transparent" id="email">
                         </div>
                         <div class="form-group">
                             <label for="message">Mensaje:</label>
                             <textarea rows="4" cols="30" class="form-control transparent" id="message"></textarea>
                         </div>
-                        <button type="submit" class="button">Submit</button>
+                        <button type="submit" class="button">Enviar</button>
                     </form>
                 </div>
             </div>
